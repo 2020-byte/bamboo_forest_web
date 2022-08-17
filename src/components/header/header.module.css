@@ -1,0 +1,52 @@
+.navbar{
+    background-color: rgb(212, 231, 178);
+}
+
+.nav{
+    margin-left: auto;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: black;
+}
+
+
+.icon {
+    height: 100%;
+}
+
+.dropdownLink {
+    text-decoration: none;
+    color: #5a5a5a;
+}
+
+.dropdownLink:hover {
+    color: #5a5a5a;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+
+}
+
+.button:hover {
+}
+
+
+@media (max-width: 992px) {
+    .button {
+        padding: 2% 0% 2% 0%;
+        text-align:left;
+    }
+}

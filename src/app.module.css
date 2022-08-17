@@ -1,0 +1,21 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  margin: 1% 10% 1% 10%;
+
+}
+
+.item1 {
+  border: 1px solid black;
+  flex-basis: 15%;
+}
+
+.item2 {
+  border: 1px solid black;
+  flex-basis: 55%;
+}
+
+.item3 {
+  border: 1px solid black;
+  flex-basis: 26%;
+}
