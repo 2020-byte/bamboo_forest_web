@@ -23,11 +23,12 @@
 
 .writeButton {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 9.4%;
     color: rgb(100, 100, 173);
     text-decoration: none;
+    margin-right: 2%;
 }
 
 .writeButton:hover {

@@ -1,0 +1,34 @@
+.bodyBox {
+    margin: 2% 0% 2% 0%;
+    border: 1px solid rgb(168, 162, 162);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.body {
+    padding:  2% 2% 2% 2%;
+    border-bottom: none;
+    
+}
+
+.footbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding:  5% 2% 2% 2%;
+    border-top: none;
+    margin-top: 5%;
+}
+
+.button {
+    border-radius: 2px;
+    border: 0;
+    color: white;
+    background-color: rgb(142, 181, 84);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.input {
+    border: 0;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}

@@ -52,7 +52,7 @@ const Headbar = ({categoryName}) => {
                 </div>
                 <Link to="/write" className={styles.writeButton}>
                     <i className="fa-solid fa-pencil"></i>
-                    <span>Write</span>
+                    <span>Post</span>
                 </Link>
             </section>
     )
