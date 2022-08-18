@@ -6,7 +6,7 @@ const Footer = (props) => {
     return (
         <div className={styles.box}>
             <p className={styles.stn}>{numPeople} people is online</p>
-            <p className={styles.stn}>UBCO Bamboo since 2022</p>
+            <p className={styles.stn}>UBCO Bamboo Forest since 2022</p>
             <p className={styles.stn}>Go to the top</p>
         </div>
 

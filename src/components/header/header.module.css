@@ -40,7 +40,8 @@
 
 }
 
-.button:hover {
+.dropdown::after{
+    display: none; 
 }
 
 

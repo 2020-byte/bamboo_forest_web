@@ -10,7 +10,7 @@ const Header = (props) => {
     return (
         <Navbar className={styles.navbar} expand="lg">
         <Container>
-            <Navbar.Brand href="/home">UBCO Bamboo Forest🎋</Navbar.Brand>
+            <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className={styles.nav}>
@@ -29,7 +29,7 @@ const Header = (props) => {
                         <i className="fa-solid fa-bookmark"></i>
                     </Link>
                 </Nav.Link>
-                <NavDropdown title="Setting" id="basic-nav-dropdown" align="end">
+                <NavDropdown className={styles.dropdown} title={<i className="fa-solid fa-ellipsis"></i>}  align="end">
                 <NavDropdown.Item>
                     <Link to="/profile" className={styles.dropdownLink}>Profile</Link>
                 </NavDropdown.Item>
@@ -48,7 +48,7 @@ const Header = (props) => {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                    <Link to="sign_out" className={styles.dropdownLink}>
+                    <Link to="/sign_out" className={styles.dropdownLink}>
                         Sign Out
                     </Link>
                 </NavDropdown.Item>
