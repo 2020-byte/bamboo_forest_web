@@ -8,15 +8,32 @@ import History from './components/history/history';
 import Bookmark from './components/bookmark/bookmark';
 import Post from './components/post/post';
 import styles from './app.module.css';
+import { useState } from 'react';
+import Menubar from './components/menubar/menubar';
+import Widgetbar from './components/widgetbar/widgetbar';
+import Write from './components/write/write';
 
 function App() {
-  const login = true;
+
+  const [login, setLogin] = useState(true);
+  const logout = () => {
+    console.log("Log out!");
+    setLogin(false);
+  }
+
+  const signIn= () => {
+    console.log("Log in!");
+    setLogin(true);
+  }
+
+  //페이지가 새로고침 될 때 서버로부터 로그인 상태 데이터를 받아와서 login상태를 false, true로 바꿔줘야 함.
+  //안 그러면 당연히 새로고침할 때 login ture로 set됨.
 
   if( login === false) {
     return (
       <div>
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login login={signIn}/>} />
         </Routes>
       </div>
     )
@@ -24,21 +41,22 @@ function App() {
   else {
     return (
       <div style={{height: '100vh'}}>
-        <Header />
+        <Header logout={logout}/>
         <div className="d-flex flex-column justify-content-between h-100">
           <div className="h-100">
             <div className={styles.box}>
-              <section className={styles.item1}>Left</section>
+              <section className={styles.item1}>
+                <Menubar />
+              </section>
               <section className={styles.item2}>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/notification" element={<Notification />} />
-                    <Route path="/history" element={<History />} />
-                    <Route path="/bookmark" element={<Bookmark />} />
                     <Route path="/post" element={<Post />} />
                 </Routes>
               </section>
-              <section className={styles.item3}>Right</section>
+              <section className={styles.item3}>
+                <Widgetbar />
+              </section>
             </div>
           </div>
           <Footer />

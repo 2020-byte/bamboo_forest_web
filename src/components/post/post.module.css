@@ -1,0 +1,32 @@
+
+
+.body {
+    border: 1px solid black;
+    padding:  2% 2% 2% 2%;
+    border-bottom: none;
+}
+
+.bodyBox {
+    margin: 2% 0% 2% 0%;
+}
+.footbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding:  5% 2% 2% 2%;
+    border: 1px solid black;
+    border-top: none;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-between;
+    color: rgb(106, 98, 163);
+    width: 11%;
+}
+
+.link:hover {
+    color: rgba(49, 57, 206, 0.82)
+}

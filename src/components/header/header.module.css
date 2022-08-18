@@ -1,19 +1,23 @@
 .navbar{
     background-color: rgb(212, 231, 178);
+    
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .nav{
-    margin-left: auto;
     padding: 0;
     height: 100%;
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    
 }
 
 .link {
-    color: inherit;
+    color: rgb(133, 128, 128);
     text-decoration: none;
+    margin: 0.5rem;
 }
 
 .link:hover {
@@ -28,6 +32,7 @@
 .dropdownLink {
     text-decoration: none;
     color: #5a5a5a;
+    display: block;
 }
 
 .dropdownLink:hover {
@@ -37,11 +42,17 @@
 .button {
     border: none;
     background-color: transparent;
+    
 
 }
 
-.dropdown::after{
-    display: none; 
+.dropdown{
+    margin: 0.5rem;
+    color: rgb(133, 128, 128);
+}
+
+.dropdown:hover {
+    color: black;
 }
 
 
@@ -50,4 +61,5 @@
         padding: 2% 0% 2% 0%;
         text-align:left;
     }
+
 }

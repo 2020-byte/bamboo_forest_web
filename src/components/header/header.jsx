@@ -6,30 +6,35 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 
-const Header = (props) => {
+const Header = ({logout}) => {
+
+    const onClick = () => {
+        logout();
+    }
+
     return (
         <Navbar className={styles.navbar} expand="lg">
-        <Container>
+        <Container >
             <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className={styles.nav}>
+            
+            
+            <div className={styles.nav}>
                 <Nav.Link>
-                    <Link to="/notification" className={styles.link}>
+                    <Link to="/post?c=notification" className={styles.link}>
                         <i className="fa-solid fa-bell"></i>
                     </Link>
                 </Nav.Link>
                 <Nav.Link>
-                    <Link to="/history" className={styles.link}>
+                    <Link to="/post?c=history" className={styles.link}>
                         <i className="fa-solid fa-clock-rotate-left"></i>
                     </Link>
                 </Nav.Link>
                 <Nav.Link>
-                    <Link to="/bookmark" className={styles.link}>
+                    <Link to="/post?c=bookmark" className={styles.link}>
                         <i className="fa-solid fa-bookmark"></i>
                     </Link>
                 </Nav.Link>
-                <NavDropdown className={styles.dropdown} title={<i className="fa-solid fa-ellipsis"></i>}  align="end">
+                <NavDropdown className={styles.dropdown} title={<i className="fa-solid fa-ellipsis"></i>} id="basic-nav-dropdown" align="end">
                 <NavDropdown.Item>
                     <Link to="/profile" className={styles.dropdownLink}>Profile</Link>
                 </NavDropdown.Item>
@@ -48,20 +53,21 @@ const Header = (props) => {
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                    <Link to="/sign_out" className={styles.dropdownLink}>
+                    <Link to="/login" onClick={onClick} className={styles.dropdownLink}>
                         Sign Out
                     </Link>
                 </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link>
-                    <Link to="/post" className={styles.link}>
+                    <Link to="/write" className={styles.link}>
                         <i className="fa-solid fa-pencil"></i>
                     </Link>
                 </Nav.Link>
-            </Nav>
-            </Navbar.Collapse>
+            </div>
+            
         </Container>
         </Navbar>
+        
     )
 }
 
