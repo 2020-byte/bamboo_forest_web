@@ -17,3 +17,20 @@
   border: 1px solid black;
   flex-basis: 26%;
 }
+
+
+@media (max-width: 992px) {
+
+  .box{
+    flex-direction: column;
+  }
+  .item1 {
+    display: none;
+  }
+
+  .item2 {
+  }
+
+  .item3 {
+  }
+}

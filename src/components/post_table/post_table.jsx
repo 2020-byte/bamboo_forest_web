@@ -51,7 +51,7 @@ const Post_table = ({onParamsChange}) => {
             id: 5,
             username: 'tester5',
             category: 'history',
-            title: 'test5',
+            title: 'test5!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!',
             like: 2,
             time: '2:00',
             post: 'this is test5.'
@@ -84,12 +84,12 @@ const Post_table = ({onParamsChange}) => {
                     <th className={styles.thItem}>Time</th>
                 </tr>
             </thead>
-            <tbody className={styles.tb}>
+            <tbody >
                 {posts.map(p => 
-                    <tr key={p.id}>
+                    <tr key={p.id} >
                         <td>{p.username}</td>
                         <td>{p.category}</td>
-                        <td>{p.title}</td>
+                        <td className={styles.tr}>{p.title}</td>
                         <td>{p.like}</td>
                         <td>{p.time}</td>
                     </tr>

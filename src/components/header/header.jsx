@@ -14,7 +14,7 @@ const Header = ({logout}) => {
 
     return (
         <Navbar className={styles.navbar} expand="lg">
-        <Container >
+        <Container  >
             <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
             
             

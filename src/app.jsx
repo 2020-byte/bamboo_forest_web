@@ -40,7 +40,7 @@ function App() {
   } 
   else {
     return (
-      <div style={{height: '100vh'}}>
+      <div style={{height: '100vh', width: '100%'}}>
         <Header logout={logout}/>
         <div className="d-flex flex-column justify-content-between h-100">
           <div className="h-100">
@@ -52,6 +52,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/post" element={<Post />} />
+                    <Route path="/write" element={<Write />} />
                 </Routes>
               </section>
               <section className={styles.item3}>
