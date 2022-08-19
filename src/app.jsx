@@ -43,7 +43,7 @@ function App() {
       <div style={{height: '100vh', width: '100%'}}>
         <Header logout={logout}/>
         <div className="d-flex flex-column justify-content-between h-100">
-          <div className="h-100">
+          <div style={{height: 'max-content'}}>
             <div className={styles.box}>
               <section className={styles.item1}>
                 <Menubar />
