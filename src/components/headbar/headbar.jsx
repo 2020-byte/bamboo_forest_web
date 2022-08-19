@@ -11,7 +11,7 @@ const Headbar = ({categoryName}) => {
                 <div>
                 <NavDropdown title={categoryName} id="navbarScrollingDropdown">
                 <NavDropdown.Item>
-                    <Link to="/post?c=all" className={styles.link}>
+                    <Link to="/post" className={styles.link}>
                         All
                     </Link>
                 </NavDropdown.Item>
