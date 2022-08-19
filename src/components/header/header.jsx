@@ -35,24 +35,24 @@ const Header = ({logout}) => {
                     </Link>
                 </Nav.Link>
                 <NavDropdown className={styles.dropdown} title={<i className="fa-solid fa-ellipsis"></i>} id="basic-nav-dropdown" align="end">
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                     <Link to="/profile" className={styles.dropdownLink}>Profile</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                     <Link to='/report' className={styles.dropdownLink}>
                         Report
                     </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                     <Link to="/post_view_settings" className={styles.dropdownLink}>Post view settings</Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                     <Link to="/edit_my_information" className={styles.dropdownLink}>Edit My Information</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item>
+                <NavDropdown.Item as="div">
                     <Link to="/login" onClick={onClick} className={styles.dropdownLink}>
                         Sign Out
                     </Link>

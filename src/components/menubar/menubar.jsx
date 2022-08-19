@@ -12,7 +12,7 @@ const Menubar = (props) => {
             <div className={styles.item}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=all">All</Link>
+                        <Link className={styles.link} to="/post">All</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>

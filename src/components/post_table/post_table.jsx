@@ -65,11 +65,15 @@ const Post_table = ({onParamsChange}) => {
 
     const [posts, setPosts] = useState([]);
     useEffect(()=> {
-        if(!search_word) {
-            onParamsChange();
-            setPosts(allpost.filter(p => p.category === category));
-        }else {
-            setPosts(allpost.filter(p => p.category === category && p.title === search_word));
+        if(!category) {
+            setPosts(allpost);
+        } else {
+            if(!search_word) {
+                onParamsChange();
+                setPosts(allpost.filter(p => p.category === category));
+            }else {
+                setPosts(allpost.filter(p => p.category === category && p.title === search_word));
+            }
         }
     }, [search_word, category])
     

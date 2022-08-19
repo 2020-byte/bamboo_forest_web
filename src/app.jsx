@@ -12,6 +12,7 @@ import { useState } from 'react';
 import Menubar from './components/menubar/menubar';
 import Widgetbar from './components/widgetbar/widgetbar';
 import Write from './components/write/write';
+import SignUp from './components/sign_up/sign_up';
 
 function App() {
 
@@ -24,16 +25,17 @@ function App() {
   const signIn= () => {
     console.log("Log in!");
     setLogin(true);
-  }
+}
 
   //페이지가 새로고침 될 때 서버로부터 로그인 상태 데이터를 받아와서 login상태를 false, true로 바꿔줘야 함.
   //안 그러면 당연히 새로고침할 때 login ture로 set됨.
 
   if( login === false) {
     return (
-      <div>
+      <div className={styles.logout}>
         <Routes>
           <Route path="/login" element={<Login login={signIn}/>} />
+          <Route path="/sign_up" element={<SignUp login={signIn}/>} />
         </Routes>
       </div>
     )

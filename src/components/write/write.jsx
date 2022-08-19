@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './write.module.css';
 
 const Write = (props) => {
@@ -44,6 +45,17 @@ const Write = (props) => {
     const handleCheckSex = () => {
         setSexChecked(!sexChecked);
     };
+
+
+    const navigate = useNavigate();
+    const onClick = () => {
+
+        // To do 
+        // handle data transfer
+        
+        navigate('/post?c=all');
+    }
+
 
     return (
         <div>
@@ -173,7 +185,7 @@ const Write = (props) => {
                         <p className={styles.footerMessage}>Please write carefully, considering the mind of the reader as much as the freedom of expression.</p>
                     </tr>
                     <tr className={styles.tr}>
-                        <button className={styles.button}>
+                        <button className={styles.button} onClick={onClick}>
                             Write in the bamboo forest
                         </button>
                     </tr>

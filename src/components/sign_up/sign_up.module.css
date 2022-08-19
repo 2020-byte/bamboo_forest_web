@@ -11,7 +11,7 @@
     border: 1px solid grey;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     height: 30px;
-    width:40%;
+    width:95%;
 }
 
 .input:focus {
@@ -21,6 +21,12 @@
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
+.label {
+    width: 40%;
+    margin: 2%;
+}
+
+
 .button {
     margin: 2%;
     border-radius: 5px;
@@ -28,23 +34,11 @@
     padding: 0 3% 0 3%;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-}
-
-.button:first-of-type {
     background-color: #337ab7;
     border-color: #2e6da4;
+    margin-left: 71%;
 }
 
-.button:hover:first-of-type {
+.button:hover {
     background-color: #2e6da4;
-}
-
-.button:last-of-type {
-    background-color: #5bc0de;
-    border-color: #46b8da;
-}
-
-.button:hover:last-of-type {
-    background-color: #46b8da;
-    color: white;
 }
