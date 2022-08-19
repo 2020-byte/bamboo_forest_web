@@ -6,7 +6,7 @@
 }
 
 .body {
-    padding:  2% 2% 2% 2%;
+    padding:  0;
     border-bottom: none;
     
 }
@@ -18,17 +18,27 @@
     padding:  5% 2% 2% 2%;
     border-top: none;
     margin-top: 5%;
+    margin-bottom: 1%;
 }
 
+.form {
+    height: 2rem
+}
 .button {
+    height: 2rem;
     border-radius: 2px;
     border: 0;
     color: white;
+    margin:0;
     background-color: rgb(142, 181, 84);
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
 
 .input {
+    height: 100%;
     border: 0;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
+

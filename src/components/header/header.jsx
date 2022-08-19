@@ -19,17 +19,17 @@ const Header = ({logout}) => {
             
             
             <div className={styles.nav}>
-                <Nav.Link>
+                <Nav.Link as="div">
                     <Link to="/post?c=notification" className={styles.link}>
                         <i className="fa-solid fa-bell"></i>
                     </Link>
                 </Nav.Link>
-                <Nav.Link>
+                <Nav.Link as="div">
                     <Link to="/post?c=history" className={styles.link}>
                         <i className="fa-solid fa-clock-rotate-left"></i>
                     </Link>
                 </Nav.Link>
-                <Nav.Link>
+                <Nav.Link as="div">
                     <Link to="/post?c=bookmark" className={styles.link}>
                         <i className="fa-solid fa-bookmark"></i>
                     </Link>
@@ -58,7 +58,7 @@ const Header = ({logout}) => {
                     </Link>
                 </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link>
+                <Nav.Link as="div">
                     <Link to="/write" className={styles.link}>
                         <i className="fa-solid fa-pencil"></i>
                     </Link>

@@ -10,25 +10,30 @@ const PostBody = ({categoryName, handleSearch, changeCategory}) => {
     const c = searchParams.get('c');
     const searchRef = useRef();
 
-    useEffect(()=> {
-        searchRef.current.value='';
-        changeCategory();
-    },[c]);
+    const onParamsChange = () => {
+            searchRef.current.value='';
+            changeCategory();
+    }
     
 
     const onSubmit = (e) => {
         e.preventDefault();
         handleSearch(searchRef.current.value);
     };
+
+    const navigate = useNavigate();
+
+    const onClick = () => {
+        navigate('/write');
+    }
     
     return (
         <div className={styles.bodyBox}>
             <section className={styles.body}>
-                <h1>Post Category: {categoryName}</h1>
-                <Post_table />
+                <Post_table onParamsChange={onParamsChange}/>
             </section>
             <section className={styles.footbar}>
-                <form onSubmit={onSubmit}>
+                <form className={styles.form} onSubmit={onSubmit}>
                     <input
                         ref={searchRef} 
                         className={styles.input} 
@@ -39,7 +44,7 @@ const PostBody = ({categoryName, handleSearch, changeCategory}) => {
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
-                <button className={styles.button} >
+                <button onClick={onClick} className={styles.button} >
                     Post
                 </button>
             </section>
