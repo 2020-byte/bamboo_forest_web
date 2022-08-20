@@ -8,7 +8,7 @@ import History from './components/history/history';
 import Bookmark from './components/bookmark/bookmark';
 import Post from './components/post/post';
 import styles from './app.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Menubar from './components/menubar/menubar';
 import Widgetbar from './components/widgetbar/widgetbar';
 import Write from './components/write/write';
@@ -19,6 +19,26 @@ import EditMyInformation from './components/edit_my_information/edit_my_informat
 
 function App() {
 
+  const [toggle, setToggle] = useState(false);
+  const onToggle = () => {
+    setToggle(!toggle);
+  };
+
+  const handleResize = () => {
+    if(window.innerWidth >= 992) {
+      setToggle(false);
+    }else {
+      setToggle(true);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => { // cleanup 
+      window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   const [login, setLogin] = useState(true);
   const logout = () => {
     console.log("Log out!");
@@ -28,7 +48,8 @@ function App() {
   const signIn= () => {
     console.log("Log in!");
     setLogin(true);
-}
+  }
+  
 
   //페이지가 새로고침 될 때 서버로부터 로그인 상태 데이터를 받아와서 login상태를 false, true로 바꿔줘야 함.
   //안 그러면 당연히 새로고침할 때 login ture로 set됨.
@@ -44,14 +65,15 @@ function App() {
     )
   } 
   else {
+
     return (
       <div style={{height: '100vh', width: '100%'}}>
-        <Header logout={logout}/>
-        <div className="d-flex flex-column justify-content-between h-100">
-          <div style={{height: 'max-content'}}>
+        <Header logout={logout} onToggle={onToggle}/>
+        <div className="d-flex flex-column justify-content-between h-100" style={{backgroundColor: 'rgb(228, 236, 227)'}}>
+          <div style={{height: 'max-content', backgroundColor: 'rgb(228, 236, 227)'}}>
             <div className={styles.box}>
               <section className={styles.item1}>
-                <Menubar />
+                <Menubar toggle={toggle}/>
               </section>
               <section className={styles.item2}>
                 <Routes>

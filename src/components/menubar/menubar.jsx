@@ -1,14 +1,26 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './menubar.module.css';
 
-const Menubar = (props) => {
+const Menubar = ({toggle}) => {
+
+
+    const [display, setDisplay] = useState('block')
+
+    useEffect(() => {
+        if(toggle) {
+            setDisplay('none');
+        }else {
+            setDisplay('block');
+        }
+    }, [toggle])
 
     const [username, setUsername] = useState('user1__student');
 
     return (
-        <div className={styles.box}>
+        <div className={styles.box} style={{display}}>
             <div className={styles.item}>
                 <Link className={styles.link} to="/profile">🌿{username}</Link>
             </div>

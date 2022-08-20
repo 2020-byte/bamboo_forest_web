@@ -11,11 +11,13 @@
 
 .item2 {
   flex-basis: 55%;
+  
 }
 
 .item3 {
   border: 1px solid black;
   flex-basis: 26%;
+  background-color: white;
 }
 
 
@@ -25,7 +27,6 @@
     flex-direction: column;
   }
   .item1 {
-    display: none;
   }
 
   .item2 {

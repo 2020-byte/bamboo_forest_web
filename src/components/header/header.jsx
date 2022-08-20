@@ -6,16 +6,25 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 
-const Header = ({logout}) => {
+const Header = ({logout, onToggle}) => {
 
     const onClick = () => {
         logout();
     }
 
+    const toggled = () => {
+        onToggle();
+    }
+
     return (
         <Navbar className={styles.navbar} expand="lg">
         <Container  >
-            <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
+            <div>
+                <button className={styles.toggle} onClick={toggled}>
+                    <i className="fa-solid fa-bars"></i>
+                </button>
+                <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
+            </div>
             
             
             <div className={styles.nav}>

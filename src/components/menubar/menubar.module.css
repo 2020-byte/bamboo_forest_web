@@ -11,7 +11,11 @@
     border: 1px solid rgb(168, 162, 162);
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: white;
+    
 }
+
+
     
 
 .list {
@@ -19,6 +23,7 @@
     padding: 0%;
     margin: -0.9px;
     box-sizing: border-box;
+    min-width: 160px;
     
 }
 
@@ -40,4 +45,11 @@
     margin: 0;
     height: 0;
     border-top: 0.2px solid rgb(18, 4, 4);
+}
+
+
+@media (max-width: 992px) {
+    .link {
+        padding: 1.2% 1.5% 1.2% 1.5%;
+    }
 }
