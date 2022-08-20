@@ -1,37 +1,29 @@
-import React, { useRef } from 'react';
-import { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './sign_up.module.css';
+import styles from './emi_body.module.css';
 
-const SignUp = ({login}) => {
+const EmiBody = (props) => {
 
-
+    const name = "temporaryName";
 
     const navigate = useNavigate();
 
     const onClick = () => {
-        login();
         navigate('/');
     }
 
 
-    const [username, setUsername] = useState('');
-    const [nameError, setNameError] = useState(false);
+    const [username, setUsername] = useState(name);
+
+    const [nameError, setNameError] = useState(true);
     const handleNameChange = (e) => {
         const nameForm = /^[a-zA-z0-9]{4,12}$/;
         setUsername(e.target.value);
         setNameError(nameForm.test(e.target.value));
     }
-    
+
 
     const [password, setPassword] = useState('');
-
-    const [emailError, setEmailError] = useState(false);
-    const handleEmailChange = (e) => {
-        const emailForm = /@student.ubc.ca$/;
-        setEmailError(emailForm.test(e.target.value));
-    }
-
 
     const [passwordError, setPasswordError] = useState(false);
     const handlePasswordChange = (e) => {
@@ -42,6 +34,7 @@ const SignUp = ({login}) => {
 
     const passwordRef = useRef();
 
+    
     const [passwordCheck, setPasswordCheck] = useState('');
 
     const [passwordCheckError, setPasswordCheckError] = useState(false);
@@ -49,7 +42,16 @@ const SignUp = ({login}) => {
         setPasswordCheck(e.target.value);
         setPasswordCheckError(passwordRef.current.value === e.target.value);
     }
-    
+
+    const [newPassword, setNewPassword] = useState('');
+
+    const [newPasswordError, setNewPasswordError] = useState(false);
+    const handleNewPasswordChange = (e) => {
+        const newPasswordForm = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/
+        setNewPassword(e.target.value);
+        setNewPasswordError(newPasswordForm.test(e.target.value));
+    }
+
     return (
         <div className={styles.box}>
             <form action="">
@@ -60,18 +62,9 @@ const SignUp = ({login}) => {
                         className={styles.input} 
                         type="text"
                         onChange={handleNameChange}
+                        value={username}
                     />
-                    {!nameError && username && <p className={styles.warning}>Please enter only uppercase and lowercase letters or numbers between 4 and 12!</p>}
-                </div>
-                <div>
-                    <label className={styles.label} htmlFor="email">UBC email</label>
-                    <input
-                        id='email'
-                        className={styles.input} 
-                        type="email" 
-                        onChange={handleEmailChange}
-                    />
-                    {!emailError && <p className={styles.warning}>Email must end with @student.ubc.ca</p>}
+                    {!nameError && <p className={styles.warning}>Please enter only uppercase and lowercase letters or numbers between 4 and 12!</p>}
                 </div>
                 <div>
                     <label className={styles.label} htmlFor="password">Password</label>    
@@ -83,6 +76,7 @@ const SignUp = ({login}) => {
                         onChange={handlePasswordChange}
                     />
                     {!passwordError  && password && <p className={styles.warning}>Please enter at least 8 digits using a combination of numbers + English letters + special characters!</p>}
+                    {!password && <p className={styles.recommanding}>Leave blank if you don't want to change</p>}
                 </div>
                 <div>
                     <label className={styles.label} htmlFor="password_check" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$">Password Check</label> 
@@ -94,6 +88,18 @@ const SignUp = ({login}) => {
                     />
                     {!passwordCheckError && passwordCheck && <p className={styles.warning}>Passwords do not match!</p>}
                 </div>
+                <div>
+                    <abbr title="Required Must be entered.">*</abbr>
+                    <label className={styles.label} htmlFor="newPassword">New Password</label>    
+                    <input
+                        id='newPassword' 
+                        className={styles.input} 
+                        type="password"
+                        onChange={handleNewPasswordChange}
+                    />
+                    {!newPasswordError  && newPassword && <p className={styles.warning}>Please enter at least 8 digits using a combination of numbers + English letters + special characters!</p>}
+                    {!newPassword && <p className={styles.warning}>You must put an existing password to be modified.</p>}
+                </div>
             </form>
             <br />
             <div>
@@ -103,4 +109,4 @@ const SignUp = ({login}) => {
     )
 }
 
-export default SignUp;
+export default EmiBody;

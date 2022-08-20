@@ -13,6 +13,9 @@ import Menubar from './components/menubar/menubar';
 import Widgetbar from './components/widgetbar/widgetbar';
 import Write from './components/write/write';
 import SignUp from './components/sign_up/sign_up';
+import Report from './components/reprot/report';
+import PostViewSettings from './components/post_view_settings/post_view_settings';
+import EditMyInformation from './components/edit_my_information/edit_my_information';
 
 function App() {
 
@@ -55,6 +58,10 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/post" element={<Post />} />
                     <Route path="/write" element={<Write />} />
+                    <Route path="/report" element={<Report />} />
+                    <Route path="/post_view_settings" element={<PostViewSettings />} />
+                    <Route path="/profile" element={<PostViewSettings />} />
+                    <Route path="/edit_my_information" element={<EditMyInformation />} />
                 </Routes>
               </section>
               <section className={styles.item3}>

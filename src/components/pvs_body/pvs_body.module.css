@@ -1,0 +1,36 @@
+.box {
+    margin: 2% 0% 2% 0%;
+    border: 1px solid rgb(168, 162, 162);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.tr {
+    /* display: flex;
+    align-content: center;
+    margin: 3%;
+    justify-content: start;
+    width: 100%;
+    align-items: center; */
+}
+
+.label {
+    width: 10%;
+    padding: 4%;
+}
+
+.table {
+    width: 100%;
+    width: 100%;
+    border: 1px solid black;
+
+}
+
+.td {
+    width: 50%;
+}
+
+.radioItem {
+    margin-right: 2.5%;
+}
+

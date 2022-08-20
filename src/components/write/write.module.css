@@ -1,7 +1,17 @@
 .warning {
     color: red;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
+.title {
+    margin: 2%;
+}
+
+.recomending {
+    margin-right: 2%;
+    margin-left: 2%;
+}
 
 .tr {
     display: flex;
@@ -35,20 +45,29 @@
 }
 
 .table {
-    border: 1px solid black;
+    width: 100%;
+    width: 100%;
+
+}
+
+.box {
+    border: 1px solid rgb(145, 143, 143);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     width: 100%;
-    box-sizing: border-box;
     width: 100%;
+    margin-top: 2%;
+    border-radius: 2px;
 }
 
 .footerMessage {
-    margin:2%;
-    width: 90%;
+    width: 100%;
+    text-align: center;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .button {
-    width: 93%;
+    width:100%;
     border-radius: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-color: cadetblue;
@@ -60,4 +79,12 @@
 
 .button:hover {
     background-color: rgb(80, 193, 156);
+}
+
+
+.writeFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4% 2% 2% 2%;
 }

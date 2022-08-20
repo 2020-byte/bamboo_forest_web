@@ -1,10 +1,8 @@
 .box {
-    border: 1px solid grey;
-    border-radius: 3px;
-    padding: 5%;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    width: 450px;
-
+    margin: 2% 0% 2% 0%;
+    border: 1px solid rgb(168, 162, 162);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
 .input {
@@ -38,7 +36,7 @@
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
     background-color: #337ab7;
     border-color: #2e6da4;
-    margin-left: 67%;
+    margin-left: 81.7%;
 }
 
 .button:hover {
@@ -49,4 +47,10 @@
     margin: 0% 2% 2% 2%;
     font-size: 90%;
     color: rgb(220, 63, 63);
+}
+
+.recommanding {
+    margin: 0% 2% 2% 2%;
+    font-size: 90%;
+    color: grey;
 }
