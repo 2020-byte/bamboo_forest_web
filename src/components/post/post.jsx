@@ -21,7 +21,7 @@ const Post = (props) => {
 
     
     const handleSearch = (search_word) => {
-        navigate(`/post?c=${category}&search_query=${search_word}`);
+        navigate(`/post?c=${category? category : 'all'}&search_query=${search_word}`);
     }
 
 

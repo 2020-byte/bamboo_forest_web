@@ -4,10 +4,9 @@ import { useNavigate, useSearchParams} from 'react-router-dom';
 import Post_table from '../post_table/post_table';
 import styles from './post_body.module.css';
 
-const PostBody = ({categoryName, handleSearch, changeCategory}) => {
+const PostBody = ({handleSearch, changeCategory}) => {
 
     const [searchParams] = useSearchParams();
-    const c = searchParams.get('c');
     const searchRef = useRef();
 
     const onParamsChange = () => {
