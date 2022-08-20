@@ -6,15 +6,17 @@ Practicing how to use React for making UI of Bamboo Forest Board Website.
 a few main function
 
 1)single page application
----
+___
 2)Import posts by category
 <img width="1112" alt="image" src="https://user-images.githubusercontent.com/76520105/185668465-cf2ff139-2ee8-4c4d-8560-6073cfd7d9be.png">
 
 <img width="1099" alt="image" src="https://user-images.githubusercontent.com/76520105/185668389-7430a46f-3d96-419d-b0a0-007d884d84d9.png">
----
+
+___
 3)Import posts by search keyword
 <img width="1102" alt="image" src="https://user-images.githubusercontent.com/76520105/185668825-a1b5783c-67c9-4841-94df-3c73af3dcc47.png">
----
+
+___
 4) Responsive
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 ---
