@@ -26,3 +26,6 @@ a few main function
 5) Responsive
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 
+6)Check vaildation for Signing up
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/76520105/185725573-d1dd0fd7-6f7f-48eb-b53d-523a57a47fc2.png">
+<img width="567" alt="image" src="https://user-images.githubusercontent.com/76520105/185725632-287c0a32-98b9-484b-af09-db972dcbb2de.png">
