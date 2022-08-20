@@ -27,5 +27,13 @@ a few main function
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 
 6)Check vaildation for Signing up
-<img width="508" alt="image" src="https://user-images.githubusercontent.com/76520105/185725573-d1dd0fd7-6f7f-48eb-b53d-523a57a47fc2.png">
+<img width="743" alt="image" src="https://user-images.githubusercontent.com/76520105/185734592-75c7a807-3d08-4f46-93d8-dd99c6053de9.png">
+<img width="610" alt="image" src="https://user-images.githubusercontent.com/76520105/185734605-352b6839-53af-48c8-90db-1731ed986ef7.png">
 <img width="567" alt="image" src="https://user-images.githubusercontent.com/76520105/185725632-287c0a32-98b9-484b-af09-db972dcbb2de.png">
+
+7)User setting page && edit user info page
+<img width="1048" alt="image" src="https://user-images.githubusercontent.com/76520105/185734625-d67f81a2-652a-46b8-af3c-2b0ab46c06a5.png">
+<img width="1079" alt="image" src="https://user-images.githubusercontent.com/76520105/185734642-89fa891d-de79-443a-9dac-7aa30f202872.png">
+<img width="1012" alt="image" src="https://user-images.githubusercontent.com/76520105/185734679-6e2064cd-3f97-408b-82ac-56d58f049f81.png">
+
+
