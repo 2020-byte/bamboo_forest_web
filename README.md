@@ -15,16 +15,15 @@ a few main function
 3)Import posts by search keyword
 <img width="1102" alt="image" src="https://user-images.githubusercontent.com/76520105/185668825-a1b5783c-67c9-4841-94df-3c73af3dcc47.png">
 
+4) Responsive
+<img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 
-4) UI and frame of Sign In, Sign Out, Sign Up function
+5) UI and frame of Sign In, Sign Out, Sign Up function
 <img width="1109" alt="image" src="https://user-images.githubusercontent.com/76520105/185669086-c7ce4723-5418-4877-8dce-2f33a1a8bb1b.png">
 <img width="1062" alt="image" src="https://user-images.githubusercontent.com/76520105/185669208-171c8d65-a9e6-4a10-8100-9ce2de63a6e5.png">
 <img width="883" alt="image" src="https://user-images.githubusercontent.com/76520105/185669244-f9a3c4c2-2f35-4737-bd30-11d75b7890ad.png">
 <img width="1085" alt="image" src="https://user-images.githubusercontent.com/76520105/185669292-cd7457a0-702f-4668-b256-9438c93f8bc2.png">
 
-
-5) Responsive
-<img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 
 6)Check vaildation for Signing up
 <img width="743" alt="image" src="https://user-images.githubusercontent.com/76520105/185734592-75c7a807-3d08-4f46-93d8-dd99c6053de9.png">
