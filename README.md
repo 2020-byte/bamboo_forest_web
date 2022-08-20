@@ -24,6 +24,7 @@ ___
 ___
 
 **4) Responsive**
+
 <img width="621" alt="image" src="https://user-images.githubusercontent.com/76520105/185669673-ff7ec300-661b-459b-a0f1-32a606cf455e.png">
 
 ---
