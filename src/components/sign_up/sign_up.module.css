@@ -3,6 +3,7 @@
     border-radius: 3px;
     padding: 5%;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    max-width: 400px;
 }
 
 .input {
@@ -41,4 +42,10 @@
 
 .button:hover {
     background-color: #2e6da4;
+}
+
+.warning {
+    margin: 0% 2% 2% 2%;
+    font-size: 90%;
+    color: rgb(220, 63, 63);
 }

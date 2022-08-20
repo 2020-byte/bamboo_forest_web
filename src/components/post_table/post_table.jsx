@@ -66,6 +66,7 @@ const Post_table = ({onParamsChange}) => {
     const [posts, setPosts] = useState([]);
     useEffect(()=> {
         if(!category) {
+            onParamsChange();
             setPosts(allpost);
         } else {
             if(!search_word) {
