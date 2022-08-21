@@ -24,6 +24,15 @@
     color: black;
 }
 
+.homelink {
+    text-decoration: none;
+    color: black;
+}
+
+.homelink:hover {
+    color: black;
+}
+
 
 .icon {
     height: 100%;

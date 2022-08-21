@@ -1,0 +1,175 @@
+.box {
+    min-height: 500px;
+    width: 100%;
+    margin-top: 2%;
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.head {
+    background-color: rgb(224, 224, 224);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid grey;
+    margin-top: -1px;
+    margin-right: -1px;
+    margin-left:  -1px;
+}
+
+.headTitle {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.title {
+    flex-basis: 90%;
+    text-align: start;
+    padding: 2% 2% 0% 2%;
+    margin: 0%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.bookmarkButton {
+    border: none;
+    background-color: transparent;
+    flex-basis: 10%;
+    font-size: 150%;
+    
+}
+
+.bookmarkButton:hover {
+    color: rgb(226, 43, 198);
+}
+
+.textBox {
+    margin: 5%;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-bottom: 10%;
+}
+
+.headInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1% 2% 1% 2%;
+}
+
+.unliked {
+    color: grey;
+}
+
+.liked {
+    color: red;
+}
+
+.footbarButton {
+    border-radius: 3px;
+    border: 1px solid grey;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-right: 1%;
+}
+
+.footBar {
+    display: flex;
+    justify-content: end;
+}
+
+.dropdown {
+    border-radius: 3px;
+    border: 1px solid grey;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin-right: 1%;
+    padding: 0% 1% 0% 1%;
+}
+
+/* To do
+padding 왜 안먹는 지 알아보기 */
+.linkBox {
+    padding: 0px;
+}
+
+.link {
+    display: block;
+    width: 100%;
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: black
+}
+
+
+.radioItem {
+    margin-right: 2.5%;
+}
+
+.textArea {
+    width: 95%;
+}
+
+.table {
+    width: 100%;
+    width: 100%;
+}
+
+.input {
+    width: 80%;
+}
+
+.tr {
+    display: flex;
+    align-content: center;
+    margin: 3%;
+    justify-content: start;
+    width: 100%;
+    align-items: center;
+}
+
+.label {
+    margin-right: 5%;
+    text-align: right;
+}
+
+.button {
+    width:100%;
+    border-radius: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-color: cadetblue;
+    background-color:rgb(127, 188, 168);
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.button:hover {
+    background-color: rgb(80, 193, 156);
+}
+
+
+.writeFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3% 2% 2% 2%;
+}
+
+.comment{
+    width: 70%;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+@media (min-width: 992.1px) {
+    .box {
+        max-width: 669.302px;
+    }
+}

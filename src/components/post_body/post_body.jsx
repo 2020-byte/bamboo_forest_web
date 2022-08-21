@@ -4,9 +4,8 @@ import { useNavigate, useSearchParams} from 'react-router-dom';
 import Post_table from '../post_table/post_table';
 import styles from './post_body.module.css';
 
-const PostBody = ({handleSearch, changeCategory}) => {
+const PostBody = ({handleSearch, changeCategory, posts}) => {
 
-    const [searchParams] = useSearchParams();
     const searchRef = useRef();
 
     const onParamsChange = () => {
@@ -29,7 +28,10 @@ const PostBody = ({handleSearch, changeCategory}) => {
     return (
         <div className={styles.bodyBox}>
             <section className={styles.body}>
-                <Post_table onParamsChange={onParamsChange}/>
+                <Post_table 
+                    onParamsChange={onParamsChange} 
+                    allPosts={posts}
+                />
             </section>
             <section className={styles.footbar}>
                 <form className={styles.form} onSubmit={onSubmit}>

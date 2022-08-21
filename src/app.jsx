@@ -16,6 +16,7 @@ import SignUp from './components/sign_up/sign_up';
 import Report from './components/reprot/report';
 import PostViewSettings from './components/post_view_settings/post_view_settings';
 import EditMyInformation from './components/edit_my_information/edit_my_information';
+import P from './components/p/p';
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
     }
   }
 
+  //To do:
+  //code not to show menu when it is refreshed in small size.
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => { // cleanup 
@@ -77,13 +80,15 @@ function App() {
               </section>
               <section className={styles.item2}>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/post" element={<Post />} />
-                    <Route path="/write" element={<Write />} />
-                    <Route path="/report" element={<Report />} />
-                    <Route path="/post_view_settings" element={<PostViewSettings />} />
-                    <Route path="/profile" element={<PostViewSettings />} />
-                    <Route path="/edit_my_information" element={<EditMyInformation />} />
+                    <Route path="" element={<Home />} />
+                    <Route path="post/*" element={<Post />} >
+                      <Route path=":id" element={<P />}/>
+                    </Route>
+                    <Route path="write" element={<Write />} />
+                    <Route path="report" element={<Report />} />
+                    <Route path="post_view_settings" element={<PostViewSettings />} />
+                    <Route path="profile" element={<PostViewSettings />} />
+                    <Route path="edit_my_information" element={<EditMyInformation />} />
                 </Routes>
               </section>
               <section className={styles.item3}>

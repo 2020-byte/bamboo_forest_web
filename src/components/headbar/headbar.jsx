@@ -10,7 +10,7 @@ const Headbar = ({categoryName}) => {
         <section className={styles.headbar}>
                 <div>
                 <NavDropdown 
-                    title={categoryName ? categoryName: 'all'} 
+                    title={categoryName} 
                     id="navbarScrollingDropdown"
                 >
                 <NavDropdown.Item as="div">

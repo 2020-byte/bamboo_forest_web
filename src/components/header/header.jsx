@@ -23,7 +23,9 @@ const Header = ({logout, onToggle}) => {
                 <button className={styles.toggle} onClick={toggled}>
                     <i className="fa-solid fa-bars"></i>
                 </button>
-                <Navbar.Brand href="/">UBCO Bamboo Forest🎋</Navbar.Brand>
+                <Navbar.Brand as="span">
+                    <Link to="/" className={styles.homelink}>UBCO Bamboo Forest🎋</Link>
+                </Navbar.Brand>
             </div>
             
             
