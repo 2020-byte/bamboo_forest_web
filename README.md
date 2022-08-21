@@ -4,7 +4,7 @@ Project: Bamboo Forest Board🎋
 
 >This front side web page is made for practicing react.
 
->This is my first clone coding web page that is made from scratch. Therefore, It still have a lots of room for optimizing for memory and speed.
+>This is my first web page maden by myself. 
 
 >I will code server and database for this web page too. While I am doing that or after it, I might want to look back this code and refactory it.
 
