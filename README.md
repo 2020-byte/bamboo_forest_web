@@ -8,7 +8,7 @@ Project: Bamboo Forest Board🎋
 
 >I will code server and database for this web page too. While I am doing that or after it, I might want to look back this code and refactory it.
 
->I left code for Home and widget bar for future Idea of design and function.
+>I left code for Home, Report List page and widget bar for future Idea of design and function.
 ***
 ## Web page description
 > This web page is single page application. Therefore, It works without refreshing website but rendering components.
