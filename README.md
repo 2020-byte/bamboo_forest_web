@@ -60,9 +60,11 @@ Project: Bamboo Forest Board🎋
 ***
 ***
 
-## 5) Likes, Bookmark, comment Functions
+## 5) Likes, Bookmark, Report, Comment Functions
 <img width="1093" alt="image" src="https://user-images.githubusercontent.com/76520105/185789762-ccd25363-d66f-45e0-a191-805124359540.png">
 <img width="1071" alt="image" src="https://user-images.githubusercontent.com/76520105/185789780-398e7908-97b8-42fa-9aec-345fcf2672f7.png">
+<img width="1084" alt="image" src="https://user-images.githubusercontent.com/76520105/185838896-c75a48cd-1b39-4095-8d42-6821230e9350.png">
+
 
 
 
