@@ -5,7 +5,6 @@ const Report = (props) => {
 
     return (
         <div>
-            <Headbar/>
             <h1>
                 Report
             </h1>

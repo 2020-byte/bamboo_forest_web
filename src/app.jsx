@@ -17,19 +17,24 @@ import Report from './components/reprot/report';
 import PostViewSettings from './components/post_view_settings/post_view_settings';
 import EditMyInformation from './components/edit_my_information/edit_my_information';
 import P from './components/p/p';
+import Default from './components/default/default';
 
 function App() {
 
   const [toggle, setToggle] = useState(false);
   const onToggle = () => {
-    setToggle(!toggle);
+    isWindowSmall && setToggle(!toggle);
   };
+
+  const [isWindowSmall, setIsWindowSmall] = useState(false);
 
   const handleResize = () => {
     if(window.innerWidth >= 992) {
       setToggle(false);
+      setIsWindowSmall(false);
     }else {
       setToggle(true);
+      setIsWindowSmall(true);
     }
   }
 
@@ -76,19 +81,21 @@ function App() {
           <div style={{height: 'max-content', backgroundColor: 'rgb(228, 236, 227)'}}>
             <div className={styles.box}>
               <section className={styles.item1}>
-                <Menubar toggle={toggle}/>
+                <Menubar toggle={toggle} closeMenubar={onToggle}/>
               </section>
               <section className={styles.item2}>
-                <Routes>
-                    <Route path="" element={<Home />} />
-                    <Route path="post/*" element={<Post />} >
+                <Routes> 
+                    <Route path="" element={<Default />} >
+                      <Route path="home" element={<Home />} />
+                      <Route path="write" element={<Write />} />
+                      <Route path="report" element={<Report />} />
+                      <Route path="post_view_settings" element={<PostViewSettings />} />
+                      <Route path="edit_my_information" element={<EditMyInformation />} />
+                    </Route>
+                    
+                    <Route path="post" element={<Post />} >
                       <Route path=":id" element={<P />}/>
                     </Route>
-                    <Route path="write" element={<Write />} />
-                    <Route path="report" element={<Report />} />
-                    <Route path="post_view_settings" element={<PostViewSettings />} />
-                    <Route path="profile" element={<PostViewSettings />} />
-                    <Route path="edit_my_information" element={<EditMyInformation />} />
                 </Routes>
               </section>
               <section className={styles.item3}>

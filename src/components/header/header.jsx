@@ -24,7 +24,7 @@ const Header = ({logout, onToggle}) => {
                     <i className="fa-solid fa-bars"></i>
                 </button>
                 <Navbar.Brand as="span">
-                    <Link to="/" className={styles.homelink}>UBCO Bamboo Forest🎋</Link>
+                    <Link to="home" className={styles.homelink}>UBCO Bamboo Forest🎋</Link>
                 </Navbar.Brand>
             </div>
             
@@ -47,7 +47,7 @@ const Header = ({logout, onToggle}) => {
                 </Nav.Link>
                 <NavDropdown className={styles.dropdown} title={<i className="fa-solid fa-ellipsis"></i>} id="basic-nav-dropdown" align="end">
                 <NavDropdown.Item as="div">
-                    <Link to="/profile" className={styles.dropdownLink}>Profile</Link>
+                    <Link to="/post_view_settings" className={styles.dropdownLink}>Profile</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as="div">

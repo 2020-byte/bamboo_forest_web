@@ -6,7 +6,6 @@ const PostViewSettings = (props) => {
 
     return (
         <div>
-            <Headbar/>
             <PvsBody />
         </div>
         

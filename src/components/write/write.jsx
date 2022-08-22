@@ -59,8 +59,7 @@ const Write = (props) => {
 
 
     return (
-        <div>
-            <Headbar />            
+        <div>           
             <div className={styles.box}>
                 <h1 className={styles.title}>Write a new post</h1>
                 <p className={styles.recomending}>Please write carefully, considering the mind of the reader as much as the freedom of expression.</p>

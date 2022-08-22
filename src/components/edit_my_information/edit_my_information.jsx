@@ -6,7 +6,6 @@ const EditMyInformation = (props) => {
 
     return (
         <div>
-            <Headbar/>
             <EmiBody />      
         </div>
         

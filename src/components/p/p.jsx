@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './p.module.css';
+import ReportButton from '../report_button/report_button';
 
 const P = () => {
 
@@ -94,14 +95,7 @@ const P = () => {
                         </span>
                         <span>Liked</span>
                     </button>
-                    <button className={styles.footbarButton} onClick={handleReport}>
-                        <span>
-                            <i className="fa-solid fa-triangle-exclamation"></i>
-                        </span>
-                        <span>
-                            Report
-                        </span>
-                    </button>
+                    <ReportButton />
                     <NavDropdown title='' id="navbarScrollingDropdown" className={styles.dropdown} align="end">
                         <NavDropdown.Item as="div" className={styles.linkBox}>
                             <Link to={`/write/${id}?edit=y`} className={styles.link}>
@@ -164,7 +158,7 @@ const P = () => {
                     willComment &&
                     <div className={styles.writeFooter}>
                         <button className={styles.button} onClick={handleComment}>
-                            Write in the bamboo forest
+                            Comment
                         </button>
                     </div>
                 }

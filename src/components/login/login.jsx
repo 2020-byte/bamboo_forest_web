@@ -8,7 +8,7 @@ const Login = ({login}) => {
 
     const onClick = () => {
         login();
-        navigate('/');
+        navigate('/home');
     }
 
     const goSignUp = () => {

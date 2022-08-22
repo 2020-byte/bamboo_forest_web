@@ -4,7 +4,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './menubar.module.css';
 
-const Menubar = ({toggle}) => {
+const Menubar = ({toggle, closeMenubar}) => {
+
+    const handleClickMenubar = () => {
+        closeMenubar();
+    }
 
 
     const [display, setDisplay] = useState('block')
@@ -21,10 +25,10 @@ const Menubar = ({toggle}) => {
 
     return (
         <div className={styles.box} style={{display}}>
-            <div className={styles.item}>
-                <Link className={styles.link} to="/profile">🌿{username}</Link>
+            <div className={styles.item} onClick={handleClickMenubar}>
+                <Link className={styles.link} to="/post_view_settings">🌿{username}</Link>
             </div>
-            <div className={styles.item}>
+            <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
                         <Link className={styles.link} to="/post?c=all">All</Link>
@@ -35,7 +39,7 @@ const Menubar = ({toggle}) => {
                     </li>
                 </ul>
             </div>
-            <div className={styles.item}>
+            <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
                         <Link className={styles.link} to="/post?c=history">History</Link>
@@ -46,7 +50,7 @@ const Menubar = ({toggle}) => {
                     </li>
                 </ul>
             </div>
-            <div className={styles.item}>
+            <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
                         <Link className={styles.link} to="/post?c=confession">Confession</Link>
@@ -57,7 +61,7 @@ const Menubar = ({toggle}) => {
                     </li>
                 </ul>
             </div>
-            <div className={styles.item}>
+            <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
                         <Link className={styles.link} to="/post?c=notification">Notification</Link>

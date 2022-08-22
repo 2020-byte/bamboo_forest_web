@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Outlet, Route, Routes, useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { Outlet, Route, Routes, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import styles from './post.module.css';
 import Headbar from '../headbar/headbar';
 import PostBody from '../post_body/post_body';
@@ -60,6 +60,8 @@ const Post = (props) => {
     const c = searchParams.get('c');
     const [category, setCategory] = useState(c);
 
+    
+
     const params = useParams();
     const id = params.id;
     const p =posts.filter(p => p.id == id);
@@ -80,7 +82,7 @@ const Post = (props) => {
     return (
         <div>
             <Headbar categoryName={category} />
-            {<Outlet context={{p}}/>}
+            <Outlet context={{p}}/>
             <PostBody 
                 categoryName={category} 
                 handleSearch={handleSearch} 

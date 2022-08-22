@@ -11,7 +11,7 @@ const SignUp = ({login}) => {
 
     const onClick = () => {
         login();
-        navigate('/');
+        navigate('/home');
     }
 
 
