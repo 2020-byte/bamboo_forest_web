@@ -70,7 +70,37 @@ Project: Bamboo Forest Board🎋
 *********************************
 **********************************
 
-## 6) CRUD function
+## 6) CRUD function with Server
+### Read
+<img width="1024" alt="image" src="https://user-images.githubusercontent.com/76520105/186188855-60dc4345-fedc-43dd-8891-44bc90338d54.png">
+>GET: get posts all
+
+<img width="1010" alt="image" src="https://user-images.githubusercontent.com/76520105/186188945-2587ab13-0521-498c-ae31-01162f20d282.png">
+>GET: get posts by category
+
+<img width="978" alt="image" src="https://user-images.githubusercontent.com/76520105/186190536-13bcf034-b388-4168-8843-1bb768f8a9d0.png">
+>GET: get post by post Id
+
+### Create
+<img width="1022" alt="image" src="https://user-images.githubusercontent.com/76520105/186190969-75dfd070-f926-4ff8-ae6b-e85fde649cc5.png">
+<img width="991" alt="image" src="https://user-images.githubusercontent.com/76520105/186192367-048c408b-2348-45b2-9025-37338f731e95.png">
+>POST: create post. (Likes and Time will be implemented with SQL
+
+### Update
+<img width="1068" alt="image" src="https://user-images.githubusercontent.com/76520105/186192712-1b0db818-605b-4595-a08f-e34cb8d3c968.png">
+<img width="1077" alt="image" src="https://user-images.githubusercontent.com/76520105/186192752-a2615328-1c09-4bd5-b5d7-c92e850c9d42.png">
+<img width="928" alt="image" src="https://user-images.githubusercontent.com/76520105/186192990-f42b63de-6d72-44fb-afce-f7a154801a22.png">
+<img width="1038" alt="image" src="https://user-images.githubusercontent.com/76520105/186194154-5c152d73-bf35-4ae4-9d73-8e100a8011af.png">
+<img width="1014" alt="image" src="https://user-images.githubusercontent.com/76520105/186194188-dad4f673-e65b-48ac-9163-dc6e243d43b3.png">
+>PUT: update post.
+
+### Delete
+<img width="1063" alt="image" src="https://user-images.githubusercontent.com/76520105/186194376-dfd267a7-40ce-4093-a7a8-368641e4405f.png">
+<img width="1060" alt="image" src="https://user-images.githubusercontent.com/76520105/186194412-2cdfa4fc-9555-4a13-b374-9bc4ee65d87d.png">
+<img width="1081" alt="image" src="https://user-images.githubusercontent.com/76520105/186194452-88fceae4-0a0f-49bf-885f-7da85a7f28f8.png">
+>DELETE: delete post.
+
+
 
 *********************************
 **********************************
