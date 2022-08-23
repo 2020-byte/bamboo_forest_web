@@ -67,5 +67,15 @@ Project: Bamboo Forest Board🎋
 
 
 
+*********************************
+**********************************
+
+## 6) CRUD function
+
+*********************************
+**********************************
+
+working on function related to auth function
+
 
 
