@@ -1,27 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import Headbar from '../headbar/headbar';
 import styles from './write.module.css';
 
-const Write = (props) => {
+const Write = ({postService}) => {
 
-    const [name, setName] = useState('anonymous');
+
+    const [anonymousChecked, setAnonymous] = useState('anonymous');
     const handleChangeName = (e) => {
-        setName(e.target.value);
+        setAnonymous(e.target.value);
     } 
 
-    const [nameList, setNametList] = useState(['anonymous', 'username'])
+    const [anonymousList, setAnonymoustList] = useState(['anonymous', 'username'])
 
 
-    const [category, setCategory] = useState('Gibberish');
+    const [categoryName, setCategory] = useState('Gibberish');
     const handleChangeCategory = (e) => {
         setCategory(e.target.value);
     } 
 
+
     const [categoryList, setCategorytList] = useState(['Gibberish', 'Notification', 'Information', 'Humor', 'Confession'])
 
-    const [period, setPeriod] = useState('Permanent');
+    const [periodChecked, setPeriod] = useState('Permanent');
     const handleChangePeriod = (e) => {
         setPeriod(e.target.value);
     } 
@@ -47,15 +49,74 @@ const Write = (props) => {
         setSexChecked(!sexChecked);
     };
 
+    const titleRef = useRef();
+    const textRef = useRef();
+
+
+    // 나의 경우에는 사용자가 ‘결제하기’ 나 ‘제출하기’ 등의 버튼을 눌렀을 때, 
+    // POST 요청에 함께 보내야 하는 state값을 변경하고 POST 요청을 해야 하는 케이스가 있었다. 
+    // 업데이트된 상태값을 넘겨야 하니까 머리로 “setState()를 실행하고 POST 요청을 보내야지!” 생각하고 코드를 짰었는데, 
+    // setState()도 비동기 / POST 요청도 비동기로 처리되며 심지어 POST 요청의 우선 순위가 더 높아 업데이트된 상태값이 전달되지 않는 문제가 있었다.
+    // 사실 POST 요청을 보내고 다른 페이지로 이동하는 동작이여서 업데이트된 상태를 가지고 있을 필요가 없었고,  
+    // 따라서 setState()를 굳이 실행하지 않고 일반 객체로 만들어 전달하여 해결했다. 
+    // setState() 를 사용할 때 정말 여기서 실행해야 하나? 라고 한 번 정도 더 생각하는 습관을 가지면 좋겠다.
+
+
+    const handlePost = () => {
+
+        const newPost = {
+            username: "tempoUser",
+            anonymous: anonymousChecked === "anonymous" ? true: false,
+            title: titleRef.current.value,
+            text: textRef.current.value,
+            period: periodChecked === "Permenant"? true: false,
+            category: categoryName,
+            comment: comentChecked,
+            profanity: profanityChecked,
+            sex: sexChecked,
+        }
+
+        
+        
+        const {username, anonymous, title, text, period, category, comment, profanity, sex} = newPost;
+        postService.postPost(username, anonymous, title, text, period, category, comment, profanity, sex);
+    };
+
+    const handlePut = () => {
+
+
+        postService.updatePost(
+            postId, 
+            textRef.current.value, 
+            textRef.current.value, 
+            periodChecked === "Permenant"? true: false, 
+            comentChecked, 
+            profanityChecked, 
+            sexChecked,
+            categoryName
+            )
+            .then(post => console.log(post));
+    }
+
+
+    const params = useParams();
+    const postId = params.id;
 
     const navigate = useNavigate();
     const onClick = () => {
+        if(postId) {
+            handlePut();
 
-        // To do 
-        // handle data transfer
-
-        navigate('/post?c=all');
+            navigate(`/posts?c=${categoryName}`)
+        }else {
+            
+            handlePost();
+            navigate('/posts?c=all');
+        }
+        
     }
+
+    
 
 
     return (
@@ -71,14 +132,14 @@ const Write = (props) => {
                                 Username
                             </td>
                             <td className={styles.input}>
-                                {nameList.map((nameValue, i) => (
+                                {anonymousList.map((nameValue, i) => (
                                     <React.Fragment key ={i}>
                                         <input className={styles.radioItem}
                                             id={nameValue} 
                                             type="radio" 
                                             name="name"
                                             value={nameValue} 
-                                            checked={name === nameValue}
+                                            checked={anonymousChecked === nameValue}
                                             onChange={handleChangeName}   
                                         />
                                         <label htmlFor={nameValue} className={styles.radioItem}>{nameValue}</label>
@@ -87,11 +148,12 @@ const Write = (props) => {
                             </td>
                         </tr>
                         <tr className={styles.tr}>
-                            <td className={styles.label}>
+                            <td className={styles.label} >
                                 Title
                             </td>
                             <td className={styles.input}>
-                                <input 
+                                <input
+                                    ref={titleRef}
                                     className={styles.text} 
                                     id='title' 
                                     name='title' 
@@ -106,6 +168,7 @@ const Write = (props) => {
                             </td>
                             <td className={styles.input}>
                                 <textarea
+                                    ref={textRef}
                                     className={styles.textArea}
                                     id="content" 
                                     name="content"
@@ -128,7 +191,7 @@ const Write = (props) => {
                                             type="radio" 
                                             name="category"
                                             value={categoryValue} 
-                                            checked={category === categoryValue}
+                                            checked={categoryName === categoryValue}
                                             onChange={handleChangeCategory}   
                                         />
                                         <label htmlFor={categoryValue} className={styles.radioItem}>{categoryValue}</label>
@@ -148,7 +211,7 @@ const Write = (props) => {
                                             type="radio" 
                                             name="period"
                                             value={periodValue} 
-                                            checked={period === periodValue}
+                                            checked={periodChecked === periodValue}
                                             onChange={handleChangePeriod}   
                                         />
                                         <label htmlFor={periodValue} className={styles.radioItem}>{periodValue}</label>

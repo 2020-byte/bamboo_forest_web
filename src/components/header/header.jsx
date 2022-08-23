@@ -6,7 +6,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 
-const Header = ({logout, onToggle}) => {
+const Header = ({logout, onToggle, closeMenubar}) => {
+
+
 
     const onClick = () => {
         logout();
@@ -14,34 +16,35 @@ const Header = ({logout, onToggle}) => {
 
     const toggled = () => {
         onToggle();
+        closeMenubar();
     }
 
     return (
         <Navbar className={styles.navbar} expand="lg">
         <Container  >
             <div>
-                <button className={styles.toggle} onClick={toggled}>
+                <button className={styles.toggle} onClick={toggled} >
                     <i className="fa-solid fa-bars"></i>
                 </button>
-                <Navbar.Brand as="span">
-                    <Link to="home" className={styles.homelink}>UBCO Bamboo Forest🎋</Link>
+                <Navbar.Brand as="span" >
+                    <Link to="home" className={styles.homelink} >UBCO Bamboo Forest🎋</Link>
                 </Navbar.Brand>
             </div>
             
             
             <div className={styles.nav}>
                 <Nav.Link as="div">
-                    <Link to="/post?c=notification" className={styles.link}>
+                    <Link to="/posts?c=notification" className={styles.link}>
                         <i className="fa-solid fa-bell"></i>
                     </Link>
                 </Nav.Link>
                 <Nav.Link as="div">
-                    <Link to="/post?c=history" className={styles.link}>
+                    <Link to="/posts?c=history" className={styles.link}>
                         <i className="fa-solid fa-clock-rotate-left"></i>
                     </Link>
                 </Nav.Link>
                 <Nav.Link as="div">
-                    <Link to="/post?c=bookmark" className={styles.link}>
+                    <Link to="/posts?c=bookmark" className={styles.link}>
                         <i className="fa-solid fa-bookmark"></i>
                     </Link>
                 </Nav.Link>

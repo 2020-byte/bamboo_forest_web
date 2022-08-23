@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link, useNavigate, useOutletContext } from 'react-router-dom';
+import { Link, useNavigate, useOutletContext, useParams } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './p.module.css';
 import ReportButton from '../report_button/report_button';
@@ -9,10 +9,30 @@ import ReportButton from '../report_button/report_button';
 const P = () => {
 
 
-    const {p} = useOutletContext();
+    const {postService, handleDelete} = useOutletContext();
     
+    const params = useParams();
+    const postId = params.id;
+    const [p, setP] = useState([]);
+    
+    
+    useEffect(() => {
+        postService
+            .getPostById(postId)
+            .then((post) => setP(post));
+    }, [postId]);
+
+
     //useState한 번 박아 노면 안바뀐다는 걸 깜빡했네, 서버에서 매번 가져올 수 있는 것들을 useState할 필요 없을듯.
-    const {title, username, time, like, post, lookup, id, category} = p[0];
+    const {title, username, createdAt, likes, text, views, id, category} = p;
+    //p이중 중첩으로 나오는 줄 알고 p[0]했는데 이중중첩아니라 p로 해야했음
+    //그런데 뭔진 모르겠는데 이 코드가 useEffect보다 나중에 실행되는 것 같은데 useEffect안에 있는 콘솔은 작동안하고
+    //useEffect 바깥에 있는 코드는 작동함.
+    //아 useEffect는 컴포넌트가 마운트 됐을 때 (처음 나타났을 때), 언마운트 됐을 때 (사라질 때), 그리고 업데이트 될 때 (특정 props가 바뀔 때) 
+    //나타나는 거임 코드 짠 순서에 맞쳐서 나타나는 게 아니라
+    //그래서 이 코드 읽어 내려가면서 useEffect를 먼저 작동시키는 게아니라 다른 것들부터 작동시키고 오류가 있으면,
+    //useEffect가 작동안하는 거인듯.
+    //그래서 애초에 useState([])이라 넣어 났으니 p[0]이 존재할 수 없으니 오류 먼저 나고 useEffect 작동 안한 거인 듯.
 
 
 
@@ -65,6 +85,11 @@ const P = () => {
 
     }
 
+    const onDelete = () => {//onClick은 js 자체 콜백이라서 매개변수 넣으면 이벤트로 생각함.
+        handleDelete(postId);
+    }
+    //이거 함수설정 안하고 그냥 넘겨버리면 왠지 모르겠는데 이 페이지로 오면서 자동으로 작동됨.
+
     
     return (
         <div className={styles.box}>
@@ -80,13 +105,13 @@ const P = () => {
                     </button>
                 </div>
                 <div className={styles.headInfo}>
-                    <span>{username} | {time}</span>
-                    <span>+{like}❤️/ {lookup}Lookup</span>
+                    <span>{username} | {createdAt}</span>
+                    <span>+{likes}❤️/ {views}Lookup</span>
                 </div>
             </section>
             <section>
                 <div className={styles.textBox}>
-                    {post}
+                    {text}
                 </div>
                 <div className={styles.footBar}>
                     <button className={styles.footbarButton} onClick={handleLike}>
@@ -98,13 +123,13 @@ const P = () => {
                     <ReportButton />
                     <NavDropdown title='' id="navbarScrollingDropdown" className={styles.dropdown} align="end">
                         <NavDropdown.Item as="div" className={styles.linkBox}>
-                            <Link to={`/write/${id}?edit=y`} className={styles.link}>
+                            <Link to={`/write/${id}`} className={styles.link}>
                                 Edit 
                             </Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item as="div" className={styles.linkBox}>
-                            <Link to={`/post?c=${category}`} className={styles.link}>
+                        <NavDropdown.Item as="div" className={styles.linkBox} onClick={onDelete}>
+                            <Link to={`/posts?c=${category}`} className={styles.link} >
                                 Delete
                             </Link>
                         </NavDropdown.Item>
@@ -157,7 +182,7 @@ const P = () => {
                 {
                     willComment &&
                     <div className={styles.writeFooter}>
-                        <button className={styles.button} onClick={handleComment}>
+                        <button className={styles.button} onClick={handleComment(postId)}>
                             Comment
                         </button>
                     </div>

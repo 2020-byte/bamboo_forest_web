@@ -19,27 +19,30 @@ import EditMyInformation from './components/edit_my_information/edit_my_informat
 import P from './components/p/p';
 import Default from './components/default/default';
 
-function App() {
+function App({postService}) {
 
-  const [toggle, setToggle] = useState(false);
+  const toggleMenu = window.innerWidth < 992; //여기는 값 저장하고 쓸 수 있는 게 새로고침이나 주소 바뀔 때 컴포넌트 바뀌면서 그 때 저장된 값을 실시간으로 바로 쓰니까.
+  const [toggle, setToggle] = useState(toggleMenu ? true: false);
   const onToggle = () => {
-    isWindowSmall && setToggle(!toggle);
+    (toggleMenu) && setToggle(!toggle);
   };
 
-  const [isWindowSmall, setIsWindowSmall] = useState(false);
 
   const handleResize = () => {
     if(window.innerWidth >= 992) {
       setToggle(false);
-      setIsWindowSmall(false);
     }else {
       setToggle(true);
-      setIsWindowSmall(true);
     }
+
+    // if(toggleMenu) { //여기서 이렇게 하면 안디고 windo.innerWidth < 992 직접해야지 정확히 화면바뀐 그 때 값을 얻지. 컴포넌트가 바뀌는게 아니고 css가 바뀌니 렌더링새로 안하니까 실시간 값을 가져오지 않고 처음에 렌더할 때 값을 가져오지.
+    //   setToggle(true);
+    // }else {
+    //   setToggle(false);
+    // }
   }
 
-  //To do:
-  //code not to show menu when it is refreshed in small size.
+  
   useEffect(() => {
     window.addEventListener('resize', handleResize);
     return () => { // cleanup 
@@ -76,7 +79,7 @@ function App() {
 
     return (
       <div style={{height: '100vh', width: '100%'}}>
-        <Header logout={logout} onToggle={onToggle}/>
+        <Header logout={logout} onToggle={onToggle} closeMenubar={onToggle}/>
         <div className="d-flex flex-column justify-content-between h-100" style={{backgroundColor: 'rgb(228, 236, 227)'}}>
           <div style={{height: 'max-content', backgroundColor: 'rgb(228, 236, 227)'}}>
             <div className={styles.box}>
@@ -87,13 +90,14 @@ function App() {
                 <Routes> 
                     <Route path="" element={<Default />} >
                       <Route path="home" element={<Home />} />
-                      <Route path="write" element={<Write />} />
+                      <Route path="write/:id" element={<Write postService={postService} />} />
+                      <Route path="write/" element={<Write  postService={postService}/>} />
                       <Route path="report" element={<Report />} />
                       <Route path="post_view_settings" element={<PostViewSettings />} />
                       <Route path="edit_my_information" element={<EditMyInformation />} />
                     </Route>
                     
-                    <Route path="post" element={<Post />} >
+                    <Route path="posts" element={<Post postService={postService}/>} >
                       <Route path=":id" element={<P />}/>
                     </Route>
                 </Routes>

@@ -14,28 +14,28 @@ const Headbar = ({categoryName}) => {
                     id="navbarScrollingDropdown"
                 >
                 <NavDropdown.Item as="div">
-                    <Link to="/post?c=all" className={styles.link}>
+                    <Link to="/posts?c=all" className={styles.link}>
                         All
                     </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
-                    <Link to="/post?c=popular_post" className={styles.link}>
-                        Popular Post
+                    <Link to="/posts?c=popular_posts" className={styles.link}>
+                        Popular Posts
                     </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
-                    <Link to="/post?c=history" className={styles.link}>
+                    <Link to="/posts?c=history" className={styles.link}>
                         History
                     </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item as="div">
-                    <Link to="/post?c=bookmark" className={styles.link}>
+                    <Link to="/posts?c=bookmark" className={styles.link}>
                         Book Mark
                     </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item as="div">
-                    <Link to="/post?c=notificiation" className={styles.link}>
+                    <Link to="/posts?c=notificiation" className={styles.link}>
                         Notification
                     </Link>
                 </NavDropdown.Item>

@@ -31,52 +31,52 @@ const Menubar = ({toggle, closeMenubar}) => {
             <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=all">All</Link>
+                        <Link className={styles.link} to="/posts?c=all">All</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=popular_post">Popular Posts</Link>
+                        <Link className={styles.link} to="/posts?c=popular_posts">Popular Posts</Link>
                     </li>
                 </ul>
             </div>
             <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=history">History</Link>
+                        <Link className={styles.link} to="/posts?c=history">History</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=bookmark">Book Mark</Link>
+                        <Link className={styles.link} to="/posts?c=bookmark">Book Mark</Link>
                     </li>
                 </ul>
             </div>
             <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=confession">Confession</Link>
+                        <Link className={styles.link} to="/posts?c=confession">Confession</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=sex">Sex</Link>
+                        <Link className={styles.link} to="/posts?c=sex">Sex</Link>
                     </li>
                 </ul>
             </div>
             <div className={styles.item} onClick={handleClickMenubar}>
                 <ul className={styles.list}>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=notification">Notification</Link>
+                        <Link className={styles.link} to="/posts?c=notification">Notification</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=information">Information</Link>
+                        <Link className={styles.link} to="/posts?c=information">Information</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=humor">Humor</Link>
+                        <Link className={styles.link} to="/posts?c=humor">Humor</Link>
                     </li>
                     <hr className={styles.hr}/>
                     <li className={styles.listItem}>
-                        <Link className={styles.link} to="/post?c=gibberish">gibberish</Link>
+                        <Link className={styles.link} to="/posts?c=gibberish">gibberish</Link>
                     </li>
                 </ul>
             </div>

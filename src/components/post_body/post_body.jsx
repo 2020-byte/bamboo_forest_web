@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams} from 'react-router-dom';
 import Post_table from '../post_table/post_table';
 import styles from './post_body.module.css';
 
-const PostBody = ({handleSearch, changeCategory, posts}) => {
+const PostBody = ({handleSearch, changeCategory, posts, categoryName, handleCategoryChanged, handleSearchChanged}) => {
 
     const searchRef = useRef();
 
@@ -30,7 +30,10 @@ const PostBody = ({handleSearch, changeCategory, posts}) => {
             <section className={styles.body}>
                 <Post_table 
                     onParamsChange={onParamsChange} 
-                    allPosts={posts}
+                    posts={posts}
+                    categoryName={categoryName}
+                    handleCategoryChanged={handleCategoryChanged}
+                    handleSearchChanged={handleSearchChanged}
                 />
             </section>
             <section className={styles.footbar}>

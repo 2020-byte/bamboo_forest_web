@@ -8,30 +8,28 @@ import styles from './post_table.module.css';
 
 
 
-const Post_table = ({onParamsChange, allPosts}) => {
+const Post_table = ({onParamsChange, categoryName, posts, handleCategoryChanged, handleSearchChanged}) => {
 
 
     const [searchParams] = useSearchParams();
     const search_word = searchParams.get('search_query');
-    const category = searchParams.get('c');
+    const category = categoryName;
 
-    const [posts, setPosts] = useState([]);
-    useEffect(()=> {
-        if(category === 'all' || category === 'popular_post') {
-            onParamsChange();
-            setPosts(allPosts);
-            if(search_word) {
-                setPosts(allPosts.filter(p => p.title === search_word));
-            }
-        } else {
-            if(!search_word) {
-                onParamsChange();
-                setPosts(allPosts.filter(p => p.category === category));
-            }else {
-                setPosts(allPosts.filter(p => p.category === category && p.title === search_word));
-            }
-        }
-    }, [search_word, category])
+
+    useEffect(() => {
+        onParamsChange();
+        let c = null;
+        if(category !== 'all' && category !== 'popular_posts') {
+            c = category;
+        } 
+        handleCategoryChanged(c);
+        
+    }, [category]);
+
+    useEffect(() => {
+        handleSearchChanged(search_word);
+    }, [search_word]);
+
     
     return (
         <Table  hover className={styles.table}>
@@ -51,13 +49,13 @@ const Post_table = ({onParamsChange, allPosts}) => {
                         <td>{p.category}</td>
                         <td className={styles.tr}>
                             <Link 
-                                to={`/post/${p.id}?c=${category}`}
+                                to={`/posts/${p.id}?c=${category}`}
                             >
                                 {p.title}
                             </Link>
                         </td>
-                        <td>{p.like}</td>
-                        <td>{p.time}</td>
+                        <td>{p.likes}</td>
+                        <td>{p.createdAt}</td>
                     </tr>
                 )}
             </tbody>
