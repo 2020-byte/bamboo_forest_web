@@ -7,6 +7,54 @@ import styles from './write.module.css';
 const Write = ({postService}) => {
 
 
+    
+
+    const params = useParams();
+    const postId = params.id;
+
+
+    //To do
+    //edit 할 때 적어논 거 불러오는 거 
+    // const p =
+    //     postService.getPostById(postId)
+    //     .then(post => {
+    //         console.log(post);
+    //         setCategory(post.category);
+    //     });
+    //props로 전달받은 변수를 setState에 넣을때 무한루프가 걸렸다.
+    //그래서 postService 그냥 실행하면 무한 루프 걸리는 거임.
+    const [p, setP] = useState([]);
+    
+    
+    // useEffect(() => {
+    //     postService
+    //         .getPostById(postId)
+    //     .then((p) => {
+    //         setCategory(p.category);
+    //         console.log(p.category);
+    //     });
+        
+    // }, [postId]);
+
+
+    // useEffect(() => {
+    //     console.log(categoryName);
+    // })
+    //innerText로 categoryName으로 전달하면 그 부분 렌더되니까 바뀐 값이 가는데
+    //그냥 값으로 태그에 전달하면 렌더 하는 게 아니니까 바뀌기 전 값을 받음. 라고 할뻔
+    //그럼 gibberish에 계속 있어야지.
+
+    
+
+
+
+
+    
+
+    
+    
+
+
     const [anonymousChecked, setAnonymous] = useState('anonymous');
     const handleChangeName = (e) => {
         setAnonymous(e.target.value);
@@ -70,7 +118,7 @@ const Write = ({postService}) => {
             title: titleRef.current.value,
             text: textRef.current.value,
             period: periodChecked === "Permenant"? true: false,
-            category: categoryName,
+            category: categoryName.toLowerCase(),
             comment: comentChecked,
             profanity: profanityChecked,
             sex: sexChecked,
@@ -87,27 +135,28 @@ const Write = ({postService}) => {
 
         postService.updatePost(
             postId, 
-            textRef.current.value, 
+            titleRef.current.value, 
             textRef.current.value, 
             periodChecked === "Permenant"? true: false, 
             comentChecked, 
             profanityChecked, 
             sexChecked,
-            categoryName
-            )
-            .then(post => console.log(post));
+            categoryName.toLowerCase(),
+            );
     }
 
 
-    const params = useParams();
-    const postId = params.id;
+
+    
+
+
 
     const navigate = useNavigate();
     const onClick = () => {
         if(postId) {
             handlePut();
 
-            navigate(`/posts?c=${categoryName}`)
+            navigate(`/posts?c=${categoryName.toLowerCase()}`)
         }else {
             
             handlePost();
@@ -120,7 +169,7 @@ const Write = ({postService}) => {
 
 
     return (
-        <div>           
+        <div>        
             <div className={styles.box}>
                 <h1 className={styles.title}>Write a new post</h1>
                 <p className={styles.recomending}>Please write carefully, considering the mind of the reader as much as the freedom of expression.</p>
