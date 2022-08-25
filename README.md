@@ -2,18 +2,16 @@ Project: Bamboo Forest Board🎋
 =
 ## Purpose and plan of this project
 
->This front side web page is made for practicing react.
+>This web page is maden for practicing react, express and filling a portfolio.
 
->This is my first web page maden by myself. 
-
->I will code server and database for this web page too. While I am doing that or after it, I might want to look back this code and refactory it.
+>This is my first web project maden from scratch. Therefore, it is more experimental than clean. .
 
 >I left code for Home, Report List page and widget bar for future Idea of design and function.
 ***
 ## Web page description
-> This web page is single page application. Therefore, It works without refreshing website but rendering components.
+> This web page is single page application. Therefore, It can works without refreshing website but rendering components.
 
->It implements anonymous bulletin board with functions such as posting, logging in, signing up, searching, and changing user information.
+>It implements anonymous bulletin board with functions such as posting, logging in, signing up, searching, and etc.
 ***
 
 
