@@ -25,7 +25,15 @@ const P = ({userId}) => {
 
     const [authorized, setAuthorized] = useState(false);
     useEffect(() => {
-        console.log(userId);
+        
+        console.log(userId);  
+        //부모에서 props바뀌면
+        //자식에서도 바뀐거 가져온다.
+        //여기서 sign up 할 때 만들어지는 유저 아이디의 이름(userId)랑
+        //log in 할 때 만들어지는 유저 아이디의 이름 (id)가 달라서
+        //id를 불러오면 당연히 userId가 없는 거임
+        //이럴 때 전체 이름을 보기 위해서 먼저 object를 불러와서
+        //이름이 제대로 되있는 지 부터 확인
         console.log(p.userId);
         console.log(userId === p.userId);
         setAuthorized(userId === p.userId);

@@ -6,7 +6,6 @@ import styles from './write.module.css';
 
 const Write = ({postService}) => {
 
-
     
 
     const params = useParams();
@@ -126,9 +125,10 @@ const Write = ({postService}) => {
 
         
         
-        const {username, anonymous, title, text, period, category, comment, profanity, sex} = newPost;
-        postService.postPost(username, anonymous, title, text, period, category, comment, profanity, sex);
+        const {anonymous, title, text, period, category, comment, profanity, sex} = newPost;
+        postService.postPost(anonymous, title, text, period, category, comment, profanity, sex);
     };
+
 
     const handlePut = () => {
 
@@ -206,7 +206,7 @@ const Write = ({postService}) => {
                                     className={styles.text} 
                                     id='title' 
                                     name='title' 
-                                    type="text" true
+                                    type="text"
                                     maxLength="30"
                                     placeholder="max-length is 30 words."/>
                             </td>

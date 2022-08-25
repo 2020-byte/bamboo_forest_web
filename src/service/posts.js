@@ -19,16 +19,15 @@ export default class PostService {
         });
     }
 
-    async postPost(username, anonymous, title, text, period, category, comment, profanity, sex) {
+    async postPost(anonymous, title, text, period, category, comment, profanity, sex) {
         return await this.http.fetch(`/write`, {
             method: 'POST',
             headers: this.getHeaders(),
             body: JSON.stringify({
-                username,
                 anonymous,
                 title,
                 text,
-                period,
+                postingPeriod: period,
                 category,
                 comment,
                 profanity,

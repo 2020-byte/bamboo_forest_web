@@ -61,13 +61,14 @@ function App({postService, authService, authErrorEventBus, tokenStorage}) {
   // 로컬스토리지에 토큰있으면 authService.me함수를 통해서 그 토큰을 서버에 전달한 후 서버에서 user을 불러와서 setUser(user)로 user 계속 값을 줘서 UI를 유지시킴 )
   //CRUD 요청할 때는 postService 함수에서 토큰을 로컬스토리지에서 가져와서 서버에 전달한 후 결과값들을 불러옴.
   const signUp = async (username, email, password) => {
-    console.log("app.jsx"+username);
     await authService
         .signup(username, email, password)
         .then((user) => setUser(user))
     navigate('/home')
     console.log("Sign Up");
   };
+
+  
       
 
   const signIn = async (email, password) => {
@@ -83,6 +84,7 @@ function App({postService, authService, authErrorEventBus, tokenStorage}) {
       await authService
         .me()
         .then((user) => setUser(user))
+      
     
   , []);
   
@@ -130,14 +132,14 @@ function App({postService, authService, authErrorEventBus, tokenStorage}) {
                     <Route path="" element={<Default />} >
                       <Route path="home" element={<Home />} />
                       <Route path="write/:id" element={<Write postService={postService} />} />
-                      <Route path="write/" element={<Write  postService={postService}/>} />
+                      <Route path="write/" element={<Write  postService={postService} />} />
                       <Route path="report" element={<Report />} />
                       <Route path="post_view_settings" element={<PostViewSettings />} />
                       <Route path="edit_my_information" element={<EditMyInformation />} />
                     </Route>
                     
                     <Route path="posts" element={<Post postService={postService}/>} >
-                      <Route path=":id" element={<P userId={user.id}/>}/>
+                      <Route path=":id" element={<P userId={user.userId}/>}/>
                     </Route>
                 </Routes>
               </section>
