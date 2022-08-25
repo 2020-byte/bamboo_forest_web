@@ -108,13 +108,13 @@ Project: Bamboo Forest Board🎋
 ## 7) Auth functions with server: Sign up, Sign in, Sign out, Me
 <img width="814" alt="image" src="https://user-images.githubusercontent.com/76520105/186713391-11d7f17d-a3b2-4166-8c40-af287e69fe2d.png">
 >Sign in with email: cat@student.ubc.ca
-***
+**************************************
 <img width="1051" alt="image" src="https://user-images.githubusercontent.com/76520105/186713515-327a44e2-c36e-4886-9ede-3afe661953d2.png">
 <img width="1064" alt="image" src="https://user-images.githubusercontent.com/76520105/186713557-ecf3aaa3-6b2b-4b85-b701-79ef8d9402c5.png">
 <img width="1012" alt="image" src="https://user-images.githubusercontent.com/76520105/186713622-3d933d0d-595b-4ee3-879e-c05362f0130f.png">
 <img width="1048" alt="image" src="https://user-images.githubusercontent.com/76520105/186713659-30d3530b-54d8-4b1f-99a9-6bec4df1b6c8.png">
 > Edit own post
-***
+**********************
 <img width="1072" alt="image" src="https://user-images.githubusercontent.com/76520105/186713739-65035962-020d-4adf-b856-7f2880f26838.png">
 <img width="1061" alt="image" src="https://user-images.githubusercontent.com/76520105/186713766-e2bb18dd-0fcb-45c7-a383-696473259adf.png">
 > Delete own post
@@ -122,7 +122,7 @@ Project: Bamboo Forest Board🎋
 > Can't edit or delete other's post
 <img width="1066" alt="image" src="https://user-images.githubusercontent.com/76520105/186713912-dfe2d033-16c7-482b-a416-33a5c90a82be.png">
 <img width="915" alt="image" src="https://user-images.githubusercontent.com/76520105/186713944-42e6bb28-7f85-46f9-ba51-11bd66b6e28c.png">
-***
+************************
 > Sign out
 <img width="563" alt="image" src="https://user-images.githubusercontent.com/76520105/186714053-9067dba5-433c-488f-a21b-ffc7786c5b32.png">
 <img width="1031" alt="image" src="https://user-images.githubusercontent.com/76520105/186714091-b9b64534-6aa2-468e-84d3-1aa5004f51ee.png">
@@ -130,12 +130,12 @@ Project: Bamboo Forest Board🎋
 <img width="996" alt="image" src="https://user-images.githubusercontent.com/76520105/186714252-c66df68c-3582-489b-9426-f2425cdd648c.png">
 <img width="1048" alt="image" src="https://user-images.githubusercontent.com/76520105/186714287-3afcd2e6-5f60-4f28-9d6c-2dfb3fea72a9.png">
 > new account made post successfully
-***
+************************
 > React lose state when the web is refreshed. However, when it is signed up or signed in, it take jwt token from server and save in localstorage.
 > Me function call this jwt token saved in localstorage and set state to be signed in when the web is refreshed.
 > Therefore, it can be valid no matter it is refreshed unless it is expired.
-***
-***
+***************
+**************
 
 
 
