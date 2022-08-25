@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import styles from './p.module.css';
 import ReportButton from '../report_button/report_button';
 
-const P = () => {
+const P = ({userId}) => {
 
 
     const {postService, handleDelete} = useOutletContext();
@@ -21,6 +21,15 @@ const P = () => {
             .getPostById(postId)
             .then((post) => setP(post));
     }, [postId]);
+
+
+    const [authorized, setAuthorized] = useState(false);
+    useEffect(() => {
+        console.log(userId);
+        console.log(p.userId);
+        console.log(userId === p.userId);
+        setAuthorized(userId === p.userId);
+    },[p]);
 
 
     //useState한 번 박아 노면 안바뀐다는 걸 깜빡했네, 서버에서 매번 가져올 수 있는 것들을 useState할 필요 없을듯.
@@ -121,7 +130,7 @@ const P = () => {
                         <span>Liked</span>
                     </button>
                     <ReportButton />
-                    <NavDropdown title='' id="navbarScrollingDropdown" className={styles.dropdown} align="end">
+                    <NavDropdown style={{display: authorized ? 'block' : 'none'}} title='' id="navbarScrollingDropdown" className={styles.dropdown} align="end">
                         <NavDropdown.Item as="div" className={styles.linkBox}>
                             <Link to={`/write/${id}`} className={styles.link}>
                                 Edit 

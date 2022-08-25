@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import Login from './components/login/login';
@@ -18,8 +18,9 @@ import PostViewSettings from './components/post_view_settings/post_view_settings
 import EditMyInformation from './components/edit_my_information/edit_my_information';
 import P from './components/p/p';
 import Default from './components/default/default';
+import { AuthErrorEventBus } from './context/AuthContext';
 
-function App({postService}) {
+function App({postService, authService, authErrorEventBus, tokenStorage}) {
 
   const toggleMenu = window.innerWidth < 992; //여기는 값 저장하고 쓸 수 있는 게 새로고침이나 주소 바뀔 때 컴포넌트 바뀌면서 그 때 저장된 값을 실시간으로 바로 쓰니까.
   const [toggle, setToggle] = useState(toggleMenu ? true: false);
@@ -50,27 +51,65 @@ function App({postService}) {
     }
   }, []);
 
-  const [login, setLogin] = useState(true);
-  const logout = () => {
-    console.log("Log out!");
-    setLogin(false);
-  }
 
-  const signIn= () => {
+
+  const navigate = useNavigate();
+  const [user, setUser] = useState(undefined);
+
+  //authService 함수에서 로컬스토리지에 토큰을 저장하고 지움. 
+  //(처음에 로그인 하거나 회원가입할 때는 jwt로 토큰을 가져와서 로컬스토리지에 저장.
+  // 로컬스토리지에 토큰있으면 authService.me함수를 통해서 그 토큰을 서버에 전달한 후 서버에서 user을 불러와서 setUser(user)로 user 계속 값을 줘서 UI를 유지시킴 )
+  //CRUD 요청할 때는 postService 함수에서 토큰을 로컬스토리지에서 가져와서 서버에 전달한 후 결과값들을 불러옴.
+  const signUp = async (username, email, password) => {
+    console.log("app.jsx"+username);
+    await authService
+        .signup(username, email, password)
+        .then((user) => setUser(user))
+    navigate('/home')
+    console.log("Sign Up");
+  };
+      
+
+  const signIn = async (email, password) => {
+    await authService
+      .login(email, password)
+      .then((user) => setUser(user))
+    navigate('/home')
     console.log("Log in!");
-    setLogin(true);
-  }
+  };
+
+  useEffect(() => 
+    async () => 
+      await authService
+        .me()
+        .then((user) => setUser(user))
+    
+  , []);
+  
   
 
-  //페이지가 새로고침 될 때 서버로부터 로그인 상태 데이터를 받아와서 login상태를 false, true로 바꿔줘야 함.
-  //안 그러면 당연히 새로고침할 때 login ture로 set됨.
+  const logout = async () => {
+    authService.logout().then(() => setUser(undefined));
+    console.log("Log out!");
+  }
 
-  if( login === false) {
+  useEffect(() => {
+    authErrorEventBus.listen((err) => {
+      console.log(err);
+      setUser(undefined);
+    })
+  }, [AuthErrorEventBus]);
+
+  
+
+
+  if(!user) {
     return (
       <div className={styles.logout}>
         <Routes>
+          <Route path="/*" element={<Login login={signIn}/>} />
           <Route path="/login" element={<Login login={signIn}/>} />
-          <Route path="/sign_up" element={<SignUp login={signIn}/>} />
+          <Route path="/sign_up" element={<SignUp signUp={signUp}/>} />
         </Routes>
       </div>
     )
@@ -98,7 +137,7 @@ function App({postService}) {
                     </Route>
                     
                     <Route path="posts" element={<Post postService={postService}/>} >
-                      <Route path=":id" element={<P />}/>
+                      <Route path=":id" element={<P userId={user.id}/>}/>
                     </Route>
                 </Routes>
               </section>

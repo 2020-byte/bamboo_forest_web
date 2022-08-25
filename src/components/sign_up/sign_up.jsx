@@ -3,15 +3,13 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './sign_up.module.css';
 
-const SignUp = ({login}) => {
+const SignUp = ({signUp}) => {
 
 
 
-    const navigate = useNavigate();
 
     const onClick = () => {
-        login();
-        navigate('/home');
+        signUp(username, email, password);
     }
 
 
@@ -24,15 +22,17 @@ const SignUp = ({login}) => {
     }
     
 
-    const [password, setPassword] = useState('');
 
+    const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState(false);
     const handleEmailChange = (e) => {
         const emailForm = /@student.ubc.ca$/;
+        setEmail(e.target.value);
         setEmailError(emailForm.test(e.target.value));
     }
 
 
+    const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState(false);
     const handlePasswordChange = (e) => {
         const passwordForm = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/

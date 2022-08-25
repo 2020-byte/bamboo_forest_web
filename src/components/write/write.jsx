@@ -206,7 +206,7 @@ const Write = ({postService}) => {
                                     className={styles.text} 
                                     id='title' 
                                     name='title' 
-                                    type="text" 
+                                    type="text" true
                                     maxLength="30"
                                     placeholder="max-length is 30 words."/>
                             </td>
