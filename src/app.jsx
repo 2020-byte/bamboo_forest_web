@@ -139,7 +139,7 @@ function App({postService, authService, authErrorEventBus, tokenStorage}) {
                     </Route>
                     
                     <Route path="posts" element={<Post postService={postService}/>} >
-                      <Route path=":id" element={<P userId={user.userId}/>}/>
+                      <Route path=":id" element={<P userId={user.id}/>}/>
                     </Route>
                 </Routes>
               </section>

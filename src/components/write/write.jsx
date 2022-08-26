@@ -134,7 +134,8 @@ const Write = ({postService}) => {
 
 
         postService.updatePost(
-            postId, 
+            postId,
+            anonymousChecked === "anonymous" ? true: false, 
             titleRef.current.value, 
             textRef.current.value, 
             periodChecked === "Permenant"? true: false, 

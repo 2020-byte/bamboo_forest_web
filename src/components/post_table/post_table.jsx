@@ -11,6 +11,7 @@ import styles from './post_table.module.css';
 const Post_table = ({onParamsChange, categoryName, posts, handleCategoryChanged, handleSearchChanged}) => {
 
 
+    console.log(posts);
     const [searchParams] = useSearchParams();
     const search_word = searchParams.get('search_query');
     const category = categoryName;
@@ -55,7 +56,7 @@ const Post_table = ({onParamsChange, categoryName, posts, handleCategoryChanged,
                             </Link>
                         </td>
                         <td>{p.likes}</td>
-                        <td>{p.createdAt}</td>
+                        <td>{p.updatedAt}</td>
                     </tr>
                 )}
             </tbody>
