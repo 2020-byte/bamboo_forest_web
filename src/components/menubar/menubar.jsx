@@ -13,13 +13,7 @@ const Menubar = ({toggle, closeMenubar}) => {
 
     const [display, setDisplay] = useState('block')
 
-    useEffect(() => {
-        if(toggle) {
-            setDisplay('none');
-        }else {
-            setDisplay('block');
-        }
-    }, [toggle])
+    
 
     const [username, setUsername] = useState('user1__student');
 
