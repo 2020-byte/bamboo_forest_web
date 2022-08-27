@@ -2,9 +2,9 @@ Project: Bamboo Forest Board🎋
 =
 ## Purpose and plan of this project
 
->This web page is maden for practicing react, express and filling a portfolio.
+>This web page is maden for portfolio as practcing JavaScript, Node.js( React, express) and MySQL( sequelize).
 
->This is my first web project maden from scratch. Therefore, it is more experimental than clean. .
+>This is my first web project maden from scratch.
 
 >I left code for Home, Report List page and widget bar for future Idea of design and function.
 ***
