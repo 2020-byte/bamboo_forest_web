@@ -153,5 +153,44 @@ Project: Bamboo Forest Board🎋
 ***
 ***
 
+## 8) Connected to Database
+<img width="344" alt="image" src="https://user-images.githubusercontent.com/76520105/187019889-42cacdaf-75ec-4af9-b946-2bb50242d8e5.png">
+<img width="1036" alt="image" src="https://user-images.githubusercontent.com/76520105/187019935-6e7ff392-a2a1-4490-bc4f-8f7f041a19af.png">
+> Making account(Sign up)
+
+***
+
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/76520105/187019970-b97505a5-80cc-48df-a936-0e13ed8ca622.png">
+<img width="1080" alt="image" src="https://user-images.githubusercontent.com/76520105/187019979-7072f40f-c840-416e-95fa-e9093978254d.png">
+<img width="1090" alt="image" src="https://user-images.githubusercontent.com/76520105/187020011-27cd3b1b-14a2-497d-a7c1-0d6d26dfb3bd.png">
+> Posting
+
+***
+
+<img width="1051" alt="image" src="https://user-images.githubusercontent.com/76520105/187020221-2c989a6b-71d9-4f14-b979-1ce7008a4092.png">
+<img width="997" alt="image" src="https://user-images.githubusercontent.com/76520105/187020248-99e2a6cf-0bb4-4ab8-85be-379403d24f88.png">
+<img width="1086" alt="image" src="https://user-images.githubusercontent.com/76520105/187020260-e51ecd7b-e611-467c-99da-86a2f58df7be.png">
+<img width="1083" alt="image" src="https://user-images.githubusercontent.com/76520105/187020275-14065e6e-b2d9-420c-aa04-f4cd43dc1ce3.png">
+> Editing
+
+***
+
+<img width="522" alt="image" src="https://user-images.githubusercontent.com/76520105/187020330-b899ec33-68e0-48e4-9b66-04b604488ed1.png">
+<img width="984" alt="image" src="https://user-images.githubusercontent.com/76520105/187020342-9b654031-f93c-4303-a228-f9fd9d726d4a.png">
+<img width="1086" alt="image" src="https://user-images.githubusercontent.com/76520105/187020346-5814fe4c-fcfd-437a-822f-638ea4630682.png">
+<img width="1081" alt="image" src="https://user-images.githubusercontent.com/76520105/187020352-cde40c12-bccf-4d5e-a72c-2ee36118e2b2.png">
+
+> Sign in with other account( can see other's post but can't delete or edit)
+
+***
+<img width="1065" alt="image" src="https://user-images.githubusercontent.com/76520105/187020404-5e6cbdf3-d852-43fe-8555-3b026e6adb7a.png">
+<img width="1070" alt="image" src="https://user-images.githubusercontent.com/76520105/187020416-0dba8cb6-c796-4715-9800-99c75b17bf5f.png">
+<img width="1078" alt="image" src="https://user-images.githubusercontent.com/76520105/187020424-d66e03ea-7e48-4106-b796-bb91fffff10f.png">
+<img width="1086" alt="image" src="https://user-images.githubusercontent.com/76520105/187020432-191aed49-dc29-4229-ac39-969727750bc2.png">
+<img width="1088" alt="image" src="https://user-images.githubusercontent.com/76520105/187020435-42e40066-206c-493b-809f-8e272d13b89d.png">
+<img width="1067" alt="image" src="https://user-images.githubusercontent.com/76520105/187020453-2a1012db-b9c9-4df2-b919-e8fcd30750c0.png">
+> Delete own post
+
+
 
 
