@@ -104,7 +104,7 @@ function App({postService, authService, authErrorEventBus, tokenStorage}) {
 
   
 
-
+  //console.log(user.id);
   if(!user) {
     return (
       <div className={styles.logout}>

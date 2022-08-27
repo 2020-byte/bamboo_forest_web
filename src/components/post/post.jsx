@@ -5,6 +5,7 @@ import Headbar from '../headbar/headbar';
 import PostBody from '../post_body/post_body';
 import { useEffect } from 'react';
 import P from '../p/p';
+import userEvent from '@testing-library/user-event';
 
 
 const Post = ({postService}) => {
@@ -36,15 +37,23 @@ const Post = ({postService}) => {
     }
 
     const [posts, setPosts] = useState([]);
+    
 
+    useEffect(() => {
+        postService
+        .getPosts(category)
+        .then(posts => setPosts([...posts]));
+    }, [category])
 
     const handleCategoryChanged = (category) => {
-        postService
-            .getPosts(category)
-            .then(posts => setPosts([...posts]));
+        console.log(category);
+        setCategory(category)
+        
 
             //console.log('handleCategory '+ posts+", "+category);
     };
+
+    
 
     const handleSearchChanged = (search_word, category) => {
         if(search_word !== null) {
@@ -82,7 +91,7 @@ const Post = ({postService}) => {
 
     return (
         <div>
-            <Headbar categoryName={category} />
+            <Headbar categoryName={category? category: 'all'} />
             <Outlet context={{ postService, handleDelete}}/>
             <PostBody 
                 categoryName={c} 

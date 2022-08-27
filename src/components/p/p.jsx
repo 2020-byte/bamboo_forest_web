@@ -34,7 +34,10 @@ const P = ({userId}) => {
         //id를 불러오면 당연히 userId가 없는 거임
         //이럴 때 전체 이름을 보기 위해서 먼저 object를 불러와서
         //이름이 제대로 되있는 지 부터 확인
-  
+        // console.log(p);
+        // console.log(userId);
+        // console.log(p.userId);
+        // console.log(p.userId === userId);
         setAuthorized(userId === p.userId);
     },[p]);
 

@@ -55,7 +55,7 @@ const Post_table = ({onParamsChange, categoryName, posts, handleCategoryChanged,
                         <td>{p.category}</td>
                         <td className={styles.tr}>
                             <Link 
-                                to={`/posts/${p.id}?c=${category}`}
+                                to={`/posts/${p.id}?c=${p.category}`}
                             >
                                 {p.title}
                             </Link>
