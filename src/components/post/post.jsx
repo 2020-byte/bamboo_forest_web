@@ -20,8 +20,12 @@ const Post = ({postService}) => {
 
     
     
+    
     const changeCategory = () => {
-        setCategory(c);
+        
+            setCategory(c);
+
+        
     }
 
     const navigate = useNavigate();
@@ -33,23 +37,48 @@ const Post = ({postService}) => {
 
     const [posts, setPosts] = useState([]);
 
-    const handleCategoryChanged = (c) => {
+
+    const handleCategoryChanged = (category) => {
         postService
-            .getPosts(c)
+            .getPosts(category)
             .then(posts => setPosts([...posts]));
+
+            //console.log('handleCategory '+ posts+", "+category);
     };
 
-    const handleSearchChanged = (search_word) => {
-        setPosts(posts.filter(p => p.title === search_word));
+    const handleSearchChanged = (search_word, category) => {
+        if(search_word !== null) {
+            postService
+            .getPosts(category)
+            .then(posts => setPosts(posts.filter(p => p.title === search_word)));
+            //console.log('handleSearch '+ posts+", "+category+", "+search_word);
+         }
+         //else {
+        //     postService
+        //     .getPosts(category)
+        //     .then(posts => setPosts([...posts]));
+        // }
+        
+        
+        
     }
 
     const handleDelete = (postId) => {
-        console.log(postId);
+        //console.log(postId);일단 !== 이거 타입틀려도 틀렸다해서 != 이걸로 해줘야 했고. 
+        //posts.map(p => console.log(p));
+       //posts.map(p => {console.log(p.id != postId); console.log(p.id)});
+        
         postService
             .deletePost(postId)
-            .then(() => setPosts((posts) => posts.filter((post) => post.id !== postId)));
-        
+            .then(() => setPosts(posts.filter(p =>  p.id != postId)));
+            //.then(() => posts=> setPosts([...posts.filter((p) => p.id != postId)]));
+        console.log(posts.filter((p) => p.id != postId));
+        console.log(posts);
     }
+
+    useEffect(() => {
+        console.log(posts);
+    }, [posts])
 
     return (
         <div>

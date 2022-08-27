@@ -26,7 +26,7 @@ const P = ({userId}) => {
     const [authorized, setAuthorized] = useState(false);
     useEffect(() => {
         
-        console.log(userId);  
+        
         //부모에서 props바뀌면
         //자식에서도 바뀐거 가져온다.
         //여기서 sign up 할 때 만들어지는 유저 아이디의 이름(userId)랑
@@ -34,8 +34,7 @@ const P = ({userId}) => {
         //id를 불러오면 당연히 userId가 없는 거임
         //이럴 때 전체 이름을 보기 위해서 먼저 object를 불러와서
         //이름이 제대로 되있는 지 부터 확인
-        console.log(p.userId);
-        console.log(userId === p.userId);
+  
         setAuthorized(userId === p.userId);
     },[p]);
 
@@ -65,7 +64,7 @@ const P = ({userId}) => {
     //To do. sign up때랑 여기랑 뭐가 달라서 여기서 한 박자 늦게 바뀌는지
     //거기도 지금은 제대로 되지만 return에 값안이용하면 한 박자 늦게 바뀌는지 확인하기
     useEffect(()=> {
-        console.log(bookmarked)
+        //console.log(bookmarked)
         if (bookmarked) {
             setBookmarkColor('rgb(226, 43, 198)');
         }else {
@@ -104,6 +103,7 @@ const P = ({userId}) => {
 
     const onDelete = () => {//onClick은 js 자체 콜백이라서 매개변수 넣으면 이벤트로 생각함.
         handleDelete(postId);
+        
     }
     //이거 함수설정 안하고 그냥 넘겨버리면 왠지 모르겠는데 이 페이지로 오면서 자동으로 작동됨.
 

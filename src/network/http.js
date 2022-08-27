@@ -15,6 +15,7 @@ export default class HttpClient {
         let data;
         try {
             data = await res.json();
+
         } catch (error) {
             console.error(error);
         }

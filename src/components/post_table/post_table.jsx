@@ -11,24 +11,29 @@ import styles from './post_table.module.css';
 const Post_table = ({onParamsChange, categoryName, posts, handleCategoryChanged, handleSearchChanged}) => {
 
 
-    console.log(posts);
+
     const [searchParams] = useSearchParams();
     const search_word = searchParams.get('search_query');
-    const category = categoryName;
 
+    const c = searchParams.get('c'); 
+
+    let category = null;
+    if(categoryName !== 'all' && categoryName !== 'popular_posts') {
+        category = c;
+    } 
 
     useEffect(() => {
         onParamsChange();
-        let c = null;
-        if(category !== 'all' && category !== 'popular_posts') {
-            c = category;
-        } 
-        handleCategoryChanged(c);
+        //console.log("change category");
+        handleCategoryChanged(category);
+        
         
     }, [category]);
 
     useEffect(() => {
-        handleSearchChanged(search_word);
+        //console.log("change search_word");
+        handleSearchChanged(search_word, category);
+        
     }, [search_word]);
 
     

@@ -133,9 +133,10 @@ const Write = ({postService}) => {
     const handlePut = () => {
 
 
+        
         postService.updatePost(
             postId,
-            anonymousChecked === "anonymous" ? true: false, 
+            anonymousChecked === "anonymous" ? true: false,
             titleRef.current.value, 
             textRef.current.value, 
             periodChecked === "Permenant"? true: false, 
@@ -157,7 +158,7 @@ const Write = ({postService}) => {
         if(postId) {
             handlePut();
 
-            navigate(`/posts?c=${categoryName.toLowerCase()}`)
+            navigate(`/posts?c=${categoryName.toLowerCase()}`);
         }else {
             
             handlePost();
