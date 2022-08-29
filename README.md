@@ -7,7 +7,7 @@
 
 > When web is redirected, netlify can not read where to start page (I guess because it is maden by react, will try netlify.toml or _redirects) 
 
-> Comments, bookmarks, likes, and the number of views of post functions are not implemented on the server. Will be implemented after refactoring the client code.
+> Additional functions other than CRUD are not implemented on the server. Will be implemented after refactoring the client code.
 ***
 ## Purpose and plan of this project
 
