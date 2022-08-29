@@ -6,6 +6,8 @@
 > Since it was deployed with Heroku, the server goes to sleep if there is no use for 30 minutes. There is a delay of 10-20 seconds to wake up again.
 
 > When web is redirected, netlify can not read where to start page (I guess because it is maden by react, will try netlify.toml or _redirects) 
+
+> Comments, bookmarks, likes, and the number of views of post functions are not implemented on the server. Will be implemented after refactoring the client code.
 ***
 ## Purpose and plan of this project
 
