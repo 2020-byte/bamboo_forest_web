@@ -1,5 +1,9 @@
 Project: Bamboo Forest Board🎋
-=
+***
+### url: https://steady-halva-48ccc0.netlify.app/
+> took a sec to get data from database(I guess because of it is free deploy and my code isn't optimized)
+> when web is redirected, netlify can not read where to start page (I guess because it is maden by react, will try netlify.toml or _redirects) 
+***
 ## Purpose and plan of this project
 
 >This web page is maden for portfolio as practcing JavaScript, Node.js( React, express) and MySQL( sequelize).
