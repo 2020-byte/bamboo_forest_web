@@ -1,6 +1,6 @@
 # Project: Bamboo Forest Board🎋
 ***
-### url: https://steady-halva-48ccc0.netlify.app/
+### URL: https://steady-halva-48ccc0.netlify.app/
 > took a sec to get data from database(I guess because of it is free deploy and my code isn't optimized)
 > Since it was deployed with Heroku, the server goes to sleep if there is no use for 30 minutes. There is a delay of 10-20 seconds to wake up again.
 > when web is redirected, netlify can not read where to start page (I guess because it is maden by react, will try netlify.toml or _redirects) 
