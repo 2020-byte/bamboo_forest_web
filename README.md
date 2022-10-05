@@ -24,6 +24,10 @@
 >It implements anonymous bulletin board with functions such as posting, logging in, signing up, searching, and etc.
 ***
 
+## Implementation function associated with the server
+> AUTH, CRUD 
+> (LIkes, comment or anything additional function isn't implemented with server yet)
+
 
 ## 1) Sign out, Sign up, Sign in functions
 <img width="1078" alt="image" src="https://user-images.githubusercontent.com/76520105/185748127-ccaa3186-6d85-45c0-b49a-4c5842d7d251.png">
