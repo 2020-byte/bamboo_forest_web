@@ -2,7 +2,7 @@
 ***
 ### URL: https://steady-halva-48ccc0.netlify.app/
 > It takes a sec to get data from database(because free deploy server platfrom is used and it turn off server while it isn't in use for a while)
-> Therefore, when you tried to sign in or sign up, need to wait for a sec.
+> Therefore, when you tried to sign in or sign up, need to wait for a sec after clicking sign in or sign up button with correct info.
 
 > Since it was deployed with Heroku, the server goes to sleep if there is no use for 30 minutes. There is a delay of 10-20 seconds to wake up again.
 
