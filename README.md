@@ -26,6 +26,7 @@
 
 ## Implementation function associated with the server
 > AUTH, CRUD 
+
 > (LIkes, comment or anything additional function isn't implemented with server yet)
 
 
