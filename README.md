@@ -1,6 +1,8 @@
 # Project: Bamboo Forest Board🎋
 ***
-### URL: https://steady-halva-48ccc0.netlify.app/
+### URL: https://steady-halva-48ccc0.netlify.app/ (doesn't work for now since heroku free plan no longer available)
+
+***
 > It takes a sec to get data from database(because free deploy server platfrom is used and it turns off server and make it sleep while serever isn't in use for a while)
 > Therefore, when you tried to sign in or sign up, need to wait for a sec after clicking sign in or sign up button with correct info. And maybe when need to wait for get data for post written as well.
 
